@@ -1,0 +1,213 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.navigation.safeargs)
+}
+
+// Signing is optional: if key.properties/keystore aren't present (e.g. F-Droid builds),
+// the release build type is left unsigned instead of failing the build.
+def keystorePropertiesFile = rootProject.file('key.properties')
+def keystoreProperties = new Properties()
+def hasKeystoreProperties = keystorePropertiesFile.exists()
+if (hasKeystoreProperties) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace = 'org.proninyaroslav.libretorrent'
+    defaultConfig {
+        applicationId 'org.proninyaroslav.libretorrent.remote'
+        minSdkVersion 24
+        targetSdkVersion 35
+        compileSdkVersion 36
+        // Version code format: 0000xx0
+        // xx - version code
+        // trailing zero - auto increment for split ABI
+        versionCode 9000350
+        // Version format: major.minor.[revision][-some_info]
+        versionName '4.1.1-remote1'
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ['room.schemaLocation': "$projectDir/schemas".toString()]
+            }
+        }
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    signingConfigs {
+        if (hasKeystoreProperties) {
+            release {
+                storeFile rootProject.file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+        }
+    }
+
+    flavorDimensions = ["deploy"]
+
+    productFlavors {
+        base {
+            dimension "deploy"
+        }
+        play {
+            dimension "deploy"
+        }
+    }
+
+    buildTypes {
+        /* Enable or disable logging in build types */
+        def SESSION_LOGGING = 'SESSION_LOGGING'
+
+        release {
+            minifyEnabled true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField('boolean', SESSION_LOGGING, 'false')
+            // Unsigned when no key.properties is provided (e.g. F-Droid, which signs releases itself)
+            if (hasKeystoreProperties) {
+                signingConfig = signingConfigs.release
+            }
+        }
+
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
+            debuggable true
+
+            buildConfigField('boolean', SESSION_LOGGING, 'true')
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
+        }
+    }
+
+    // https://issuetracker.google.com/issues/402800800
+    def isBuildingBundle = gradle.startParameter.taskNames.any { it.toLowerCase().contains("bundle") }
+    splits {
+        abi {
+            enable = !isBuildingBundle
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            universalApk = true
+        }
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        coreLibraryDesugaringEnabled = true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError = false
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+        buildConfig = true
+        resValues = true
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+}
+
+project.ext.versionCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, 'x86': 3, 'x86_64': 4]
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.outputs.each { output ->
+            def filter = output.filters.find { it.filterType.name() == 'ABI' }
+            def abiCode = filter ? (project.ext.versionCodes[filter.identifier] ?: 0) : 0
+            output.versionCode.set(abiCode + (output.versionCode.get() ?: 0))
+        }
+    }
+}
+
+tasks.withType(Test).configureEach {
+    testLogging {
+        exceptionFormat 'full'
+        events 'started', 'skipped', 'passed', 'failed'
+        showStandardStreams true
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring libs.desugar.jdk.libs
+
+    /* Testing */
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.rules
+    androidTestImplementation libs.room.testing
+    testAnnotationProcessor libs.auto.service
+
+    /* AndroidX libraries */
+    implementation libs.appcompat
+    implementation libs.fragment
+    implementation libs.activity
+    implementation libs.lifecycle.livedata.core
+    implementation libs.lifecycle.viewmodel
+    implementation libs.paging.runtime
+    implementation libs.paging.rxjava3
+    implementation libs.recyclerview
+    implementation libs.recyclerview.selection
+    implementation libs.room.rxjava3
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler /* For schemas import */
+    implementation libs.swiperefreshlayout
+    implementation libs.work.runtime
+    implementation libs.material
+    implementation libs.viewpager2
+    implementation libs.lifecycle.viewmodel
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.preference
+    // Fix for WorkManager https://github.com/google/ExoPlayer/issues/7993
+    implementation libs.guava
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.constraintlayout
+    implementation libs.documentfile
+
+    /* ReactiveX */
+    implementation libs.rxjava
+    implementation libs.rxandroid
+
+    /* ACRA */
+    implementation libs.acra.dialog
+    implementation libs.acra.mail
+
+    /* libtorrent wrapper */
+    implementation libs.libtorrent4j
+    implementation libs.libtorrent4j.android.arm
+    implementation libs.libtorrent4j.android.arm64
+    implementation libs.libtorrent4j.android.x86
+    implementation libs.libtorrent4j.android.x86.x4
+
+    /* Other */
+    implementation libs.expandablelayout
+    implementation libs.colorpickerview
+    implementation libs.jurl
+    implementation libs.commons.io
+    implementation libs.commons.text
+    implementation libs.gson
+    implementation libs.jna
+    implementation libs.moshi
+    implementation libs.moshi.adapters
+}

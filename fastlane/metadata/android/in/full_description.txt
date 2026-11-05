@@ -1,0 +1,19 @@
+* GPLv3+ berlisensi. Gunakan, lihat, ubah dan bagikan; Dengan semua.
+* BitTorrent 2.0 dan WebTorrent support
+* pilih berkas mana yang akan diunduh.
+* pindahkan berkas sewaktu mengunduh.
+* pindah otomatis mengunduh berkas ke folder lain atau drive eksternal.
+* berkas streaming, dengan unduhan berurutan.
+* Android TV.
+* desain materi, tema gelap dan hitam, dan UI tablet.
+* pengaturan jaringan, baterai, dan UI yang dapat disesuaikan, DLL.
+* 35+ terjemahan.
+* penjadwalan.
+* auto-, dengan manajer Atom/RSS.
+* buat torrents, dengan banyak dan berkas-berkas besar.
+* HTTP\ dan jaringan magnet.
+DHT, PeX, enkripsi, LSD, UPnP, NAT PMP, µTP.
+* filtering IP (eMule dat dan PeerGuardian).
+* mendukung proxy bagi pencari jejak dan teman sebaya.
+* berdasarkan libtorrent4j.
+* Dan masih banyak lagi.

@@ -1,0 +1,19 @@
+* Lisensiert GPLv3+. Bruk, utforsk, endre og del; med alle.
+* BitTorrent 2.0 og WebTorrent-støtte.
+* Velg hvilke filer du vil laste ned.
+* Flytt filer mens du laster ned.
+* Auto-flytt nedlastede filer til en annen mappe eller annet sted.
+* Strømming av filer, med sekvensielle nedlastinger.
+* Android TV.
+* Materielt design, mørk og svart drakt, og nettbrettsgrensesnitt.
+* Innstillinger for nettverk, batteri, grensesnittsinnstillinger, osv.
+* 35+ oversettelser.
+* Planlegging.
+* Auto-nedlasting med Atom/RSS-behandler.
+* Opprett torrent-er, med mange og store filer.
+* HTTP\S og magnetlenker.
+* DHT, PeX, kryptering, LSD, UPnP, NAT*PMP, µTP.
+* IP-filtrering (eMule dat og PeerGuardian).
+* Støtter mellomtjener for sporere og likemenn.
+* Basert på libtorrent4j.
+* +++.

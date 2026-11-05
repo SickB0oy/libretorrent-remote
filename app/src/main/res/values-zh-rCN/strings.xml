@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Global string -->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="error">错误</string>
+    <string name="warning">警告</string>
+    <string name="shutdown">关闭</string>
+    <string name="replace">替换</string>
+    <string name="add">添加</string>
+    <string name="delete">删除</string>
+    <string name="deleting">正在删除…</string>
+    <string name="select_all">全选</string>
+    <string name="save">保存</string>
+    <string name="search">搜索</string>
+    <string name="not_available">不可用</string>
+    <!-- 1 d. 1 h. 1 m -->
+    <string name="elapsed_time_format_d_h_mm">%1$d 日 %2$d 时 %3$d 分</string>
+    <!-- 1 h. 1 m. 1 s -->
+    <string name="elapsed_time_format_h_mm_ss">%1$d 时 %2$d 分 %3$d 秒</string>
+    <!-- 1 m. 1 s -->
+    <string name="elapsed_time_format_mm_ss">%1$d 分 %2$d 秒</string>
+    <!-- 1 s -->
+    <string name="elapsed_time_format_ss">%1$d 秒</string>
+    <string name="def">默认</string>
+    <string name="foreground_notification">前台通知</string>
+    <string name="link">链接</string>
+    <string name="filter">筛选器</string>
+    <string name="refresh">刷新</string>
+    <string name="edit">编辑</string>
+    <string name="menu">菜单</string>
+    <string name="open_navigation_drawer">打开导航抽屉</string>
+    <string name="close_navigation_drawer">关闭导航抽屉</string>
+    <string name="file">文件</string>
+    <string name="folder">文件夹</string>
+    <string name="finished">完成</string>
+    <string name="pause_all">全部暂停</string>
+    <string name="resume_all">全部继续</string>
+    <string name="all">全部</string>
+    <string name="details">详情</string>
+    <string name="stats">统计</string>
+    <string name="filters">筛选器</string>
+    <string name="apply">应用</string>
+    <string name="clipboard">剪贴板</string>
+    <string name="switch_on">打开</string>
+    <string name="switch_off">关闭</string>
+    <!-- Main window -->
+    <string name="delete_torrent_with_downloaded_files">与已下载的文件一并删除</string>
+    <string name="delete_selected_torrent">删除所选定的种子？（无法撤销。）</string>
+    <string name="delete_selected_torrents">删除所选定的所有种子？（无法撤销。）</string>
+    <string name="force_recheck_torrent">强制重新校验</string>
+    <string name="force_announce_torrent">强制发布</string>
+    <string name="add_link">添加链接</string>
+    <string name="dialog_add_link_title">输入信息哈希值、磁力链接或 HTTP/S 链接</string>
+    <string name="torrent_list_empty">没有种子任务</string>
+    <string name="select_or_add_torrent">选择或添加一个种子</string>
+    <string name="error_empty_link">输入链接</string>
+    <string name="error_invalid_link">无效链接</string>
+    <string name="error_open_torrent_file">无法打开 .torrent 文件</string>
+    <string name="open_file">打开文件</string>
+    <string name="settings">设置</string>
+    <string name="ip_filter_add_error">无法添加 IP 筛选器（失败 %1$d 个）。可能文件已损坏或格式不正确？</string>
+    <string name="ip_filter_add_success">已添加 IP 筛选器</string>
+    <string name="proxy_settings_applied">使用新的代理服务器设置。</string>
+    <string name="proxy_settings_apply_after_reboot">重新启动应用程序来使用新的代理设置。</string>
+    <string name="theme_settings_apply_after_reboot">重新启动应用程序来使用新的主题。</string>
+    <string name="about">关于</string>
+    <!-- Navigation drawer -->
+    <string name="session_stats_dht_nodes">DHT 节点：%1$d</string>
+    <!-- total download/upload • download/upload speed -->
+    <string name="session_stats_download_upload">%1$s • %2$s/s</string>
+    <string name="session_stats_listen_port">监听端口：%1$s</string>
+    <!-- Status -->
+    <string name="drawer_status">状态</string>
+    <string name="drawer_status_downloading">下载中…</string>
+    <string name="drawer_status_downloaded">已下载</string>
+    <string name="drawer_status_downloading_metadata">下载元数据中…</string>
+    <string name="drawer_status_error">错误</string>
+    <!-- Sorting -->
+    <string name="drawer_sorting">排序</string>
+    <string name="drawer_sorting_name">名称</string>
+    <string name="drawer_sorting_date_added">添加日期</string>
+    <string name="drawer_sorting_size">大小</string>
+    <string name="drawer_sorting_progress">进度</string>
+    <string name="drawer_sorting_ETA">预计用时</string>
+    <string name="drawer_sorting_peers">用户数</string>
+    <string name="drawer_sorting_no_sorting">不排序</string>
+    <!-- Date added -->
+    <string name="drawer_date_added">添加日期</string>
+    <string name="drawer_date_added_today">今日</string>
+    <string name="drawer_date_added_yesterday">昨日</string>
+    <string name="drawer_date_added_week">本周</string>
+    <string name="drawer_date_added_month">本月</string>
+    <string name="drawer_date_added_year">本年</string>
+    <string name="tags">标签</string>
+    <string name="add_tag">添加标签</string>
+    <string name="edit_tag">编辑标签</string>
+    <string name="tag_name">标签名称</string>
+    <string name="tag_color">标签颜色</string>
+    <string name="add_tag_failed">无法添加标签</string>
+    <string name="tag_deleting_failed">无法删除标签</string>
+    <string name="tag_already_exists">该标签已存在</string>
+    <string name="no_tags">无标签</string>
+    <string name="select_tag">选择标签</string>
+    <string name="new_tag">新建标签</string>
+    <string name="without_tags">未加标签</string>
+    <!-- Foreground notification -->
+    <!-- percent • ETA • download speed • name -->
+    <string name="downloading_torrent_notify_template">%1$d%% • %2$s • ↓ %3$s/s • %4$s</string>
+    <!-- status • upload speed • name -->
+    <string name="seeding_torrent_notify_template">%1$s • ↑ %2$s/s • %3$s</string>
+    <!-- status • name -->
+    <string name="other_torrent_notify_template">%1$s • %2$s</string>
+    <string name="torrent_count_notify_template">已下载：%1$d 总计：%2$d</string>
+    <string name="app_running_in_the_background">正在后台运行…</string>
+    <string name="network_online">在线</string>
+    <string name="network_offline">离线</string>
+    <string name="notify_shutting_down">正在关闭…</string>
+    <!-- Error notification -->
+    <string name="torrent_error_notify_title">种子错误</string>
+    <string name="error_template">错误：%1$s</string>
+    <string name="restore_torrent_error">无法从此前会话中恢复种子。</string>
+    <string name="session_error_title">会话错误</string>
+    <!-- ip_address:port, type (error: error_msg)-->
+    <string name="nat_error_title">NAT 错误</string>
+    <!-- Finish notification -->
+    <string name="torrent_finished_notify">种子已完成</string>
+    <!-- Torrents move notification -->
+    <string name="torrent_moving_title">正在移动种子…</string>
+    <string name="torrent_moving_content">正在移动 %1$s，请稍候…</string>
+    <string name="torrent_move_success">已移动种子</string>
+    <string name="torrent_move_fail">无法移动种子</string>
+    <!-- Added notification -->
+    <!-- Torrent list item -->
+    <!-- downloaded/total (percent) -->
+    <string name="download_counter_template">%1$s/%2$s（%3$d%%）</string>
+    <!-- ↓ download speed | ↑ upload speed -->
+    <string name="download_upload_speed_template">↓ %1$s/s | ↑ %2$s/s</string>
+    <!-- downloaded/total • percent • ETA -->
+    <string name="download_counter_ETA_template">%1$s/%2$s • %3$d%% %4$s</string>
+    <!-- connected/total -->
+    <string name="peers_template">%1$d/%2$d</string>
+    <string name="torrent_status_downloading">下载中…</string>
+    <string name="torrent_status_seeding">做种中…</string>
+    <string name="torrent_status_paused">已暂停</string>
+    <string name="torrent_status_stopped">已停止</string>
+    <string name="torrent_status_checking">校验中…</string>
+    <string name="torrent_status_finished">已完成</string>
+    <string name="torrent_status_downloading_metadata">下载元数据中…</string>
+    <!-- Permission dialog -->
+    <string name="perm_denied_title">获取权限失败</string>
+    <string name="perm_denied_warning">下载种子和访问 .torrent 文件需要存储权限。是否确实要拒绝此权限？</string>
+    <!-- Add torrent dialog -->
+    <string name="add_torrent_title">添加种子</string>
+    <string name="error_decode_torrent">无法解码 .torrent 文件。可能文件已损坏或格式不正确？</string>
+    <string name="error_io_torrent">无法读取 .torrent 文件</string>
+    <string name="error_fetch_link">无法从链接提取数据</string>
+    <string name="error_invalid_link_or_path">无效链接或种子路径</string>
+    <string name="error_add_torrent">无法添加种子文件</string>
+    <string name="error_file_not_found_add_torrent">无法添加种子。可能是因为 .torrent 文件被移动或删除了？</string>
+    <string name="error_io_add_torrent">因 I/O 错误无法添加种子文件。</string>
+    <string name="torrent_exist">由于该种子已存在，两者已被合并。</string>
+    <string name="error_field_required">必填字段</string>
+    <string name="error_no_files_selected">尚未选择文件</string>
+    <string name="free_space">剩余空间 %1$s</string>
+    <string name="error_free_space">没有足够的可用空间以下载所选文件。</string>
+    <string name="files_size">已选文件大小 %1$s ，文件总大小 %2$s</string>
+    <string name="start_torrent">开始任务</string>
+    <string name="file_is_too_large_error">文件过大</string>
+    <string name="unable_to_open_folder">无法打开选定的文件夹。请尝试选择其他文件夹。</string>
+    <string name="error_empty_name">输入一个名称</string>
+    <string name="ignore_free_space">忽略低存储空间</string>
+    <!-- Torrent info -->
+    <string name="torrent_info">详情</string>
+    <string name="torrent_files">文件</string>
+    <string name="torrent_name">名称</string>
+    <string name="upload_torrent_into">上传至…</string>
+    <string name="torrent_size">大小</string>
+    <string name="torrent_file_count">文件数量</string>
+    <string name="torrent_hash_sum">校验和</string>
+    <string name="torrent_comment">备注</string>
+    <string name="torrent_create_date">文件创建日期</string>
+    <string name="torrent_created_in_program">文件创建工具</string>
+    <string name="sequential_download">顺序下载</string>
+    <!-- Filemanager dialog -->
+    <string name="dir_chooser_title">选择文件夹</string>
+    <string name="file_chooser_title">选择文件</string>
+    <string name="torrent_file_chooser_title">选择种子</string>
+    <string name="dialog_new_folder_title">创建文件夹</string>
+    <string name="error_dialog_new_folder">无法创建新文件夹</string>
+    <string name="error_open_dir">无法打开文件夹</string>
+    <string name="home_directory">主页</string>
+    <!-- name (size) -->
+    <string name="storage_name_and_size" formatted="false">%1$s（%2$s）</string>
+    <string name="internal_storage_name">内部存储</string>
+    <string name="external_storage_name" formatted="false">外部存储 %1$d</string>
+    <string name="permission_denied">权限被拒</string>
+    <string name="save_file">保存文件</string>
+    <string name="file_name">文件名</string>
+    <string name="error_file_exists">文件已经存在</string>
+    <string name="file_name_is_empty">请先输入文件名</string>
+    <string name="replace_file">替换文件</string>
+    <string name="parent_folder">上层文件夹</string>
+    <!-- Error dialog -->
+    <string name="report">反馈</string>
+    <string name="more_details">更多细节</string>
+    <!-- Detail torrent dialog -->
+    <!-- priority • downloaded/total • percent • availability -->
+    <string name="file_downloading_status_template">%1$s • %2$s/%3$s • %4$d%% •
+\n可用性：%5$s</string>
+    <string name="file_priority_normal">正常</string>
+    <string name="file_priority_low">忽略</string>
+    <string name="file_priority_high">高</string>
+    <string name="file_priority_mixed">混合</string>
+    <string name="change_priority">优先级</string>
+    <string name="dialog_change_priority_title">修改优先级</string>
+    <string name="change_priority_low">低（忽略文件）</string>
+    <string name="change_priority_normal">正常</string>
+    <string name="change_priority_high">高</string>
+    <string name="torrent_state">状态</string>
+    <string name="torrent_speed">速度</string>
+    <string name="torrent_downloaded">已下载</string>
+    <string name="torrent_ETA">预计用时</string>
+    <string name="torrent_seeds">做种用户</string>
+    <string name="torrent_peers">对等端</string>
+    <string name="torrent_leechers">下载用户</string>
+    <!-- connected (total) -->
+    <string name="torrent_peers_template">%1$d （%2$d）</string>
+    <string name="torrent_uploaded">已上传</string>
+    <string name="torrent_share_ratio">分享率</string>
+    <string name="torrent_active_time">活跃时间</string>
+    <string name="torrent_seeding_time">做种时间</string>
+    <string name="torrent_pieces">区块</string>
+    <!-- downloaded/total (piece length) -->
+    <string name="torrent_pieces_template">%1$d/%2$d （%3$s）</string>
+    <string name="torrent_trackers">Tracker</string>
+    <string name="tracker_state_working">工作中</string>
+    <string name="tracker_state_not_working">不工作</string>
+    <string name="tracker_state_updating">更新中…</string>
+    <string name="tracker_state_not_contacted">尚未连接</string>
+    <string name="share_tracker_url">分享链接…</string>
+    <string name="delete_selected_tracker">删除所选 Tracker？</string>
+    <string name="delete_selected_trackers">删除所选的所有 Tracker？</string>
+    <string name="add_trackers">添加 Tracker</string>
+    <string name="dialog_add_trackers">（每行一个）</string>
+    <string name="open_using">打开方式</string>
+    <string name="peer_port">端口：%1$d</string>
+    <string name="peer_relevance">关联度：%1$.1f</string>
+    <string name="peer_connection_type">协议：%1$s</string>
+    <!-- ↓ total download • ↑ total upload -->
+    <string name="peer_total_download_upload">↓ %1$s • ↑ %2$s</string>
+    <string name="peer_client">客户端：%1$s</string>
+    <string name="peer_connection_type_bittorrent">BT</string>
+    <string name="peer_connection_type_web">Web</string>
+    <string name="peer_connection_type_utp">μTP</string>
+    <string name="peer_list_empty">当前种子还没有连接到任何用户</string>
+    <string name="piece_map">区块图</string>
+    <string name="resume_torrent">继续</string>
+    <string name="pause_torrent">暂停</string>
+    <string name="share_magnet">分享磁力链接</string>
+    <string name="save_torrent_file">保存种子文件</string>
+    <string name="torrent_speed_limit">速度限制</string>
+    <string name="share_via">分享方式…</string>
+    <string name="save_torrent_file_successfully">.torrent 文件已保存</string>
+    <string name="error_save_torrent_file">无法保存种子文件</string>
+    <string name="speed_limit_title">最大速度</string>
+    <string name="upload_speed">上传</string>
+    <string name="download_speed">下载</string>
+    <string name="speed_limit_dialog">单位 KiB/s （0 - 无限大）</string>
+    <string name="torrent_added_date">添加日期</string>
+    <string name="torrent_availability">可用性</string>
+    <string name="share_stream_url">分享流媒体链接…</string>
+    <string name="magnet_include_file_priorities">包含文件属性？</string>
+    <string name="magnet_more_about_bep53">更多信息：https://www.bittorrent.org/beps/bep_0053.html</string>
+    <string name="tracker_list_empty">没有 Tracker</string>
+    <string name="edit_torrent_name">编辑种子名称</string>
+    <!-- Send text to clipboard -->
+    <string name="send_text_to_clipboard">复制</string>
+    <string name="text_copied_to_clipboard">已复制到剪贴板</string>
+    <!-- Error report -->
+    <string name="app_error_occurred">应用程序发生了一个错误。你可以将其报告给开发人员。</string>
+    <string name="error_comment_prompt">在此处添加额外信息和评论：</string>
+    <!-- Feeds -->
+    <string name="feed">RSS 订阅</string>
+    <string name="feed_channel_list_empty">无频道</string>
+    <string name="select_or_add_feed_channel">选择或添加一个 RSS/Atom 频道</string>
+    <string name="add_feed_channel">添加频道</string>
+    <string name="feed_name">（可选）名称</string>
+    <string name="feed_filter_prompt">输入多个单词或一条正则表达式进行筛选 （注：多个单词间用“|”隔开，其中之一必须包含在种子名称中）。只有当这个筛选器与种子名称相匹配时，才会添加种子。</string>
+    <string name="feed_filter_prompt_one_per_line">每行输入一个筛选器。</string>
+    <string name="feed_auto_download">自动下载种子</string>
+    <string name="feed_use_regex">使用正则表达式</string>
+    <string name="backup_feed_channels">保存备份</string>
+    <string name="restore_feed_channels_backup">还原备份</string>
+    <string name="feed_last_update_template">上次更新：%1$s</string>
+    <string name="feed_last_update_never">从未更新</string>
+    <string name="error_cannot_add_channel">无法添加频道</string>
+    <string name="error_cannot_edit_channel">无法编辑频道</string>
+    <string name="error_cannot_delete_channel">无法删除频道</string>
+    <string name="copy_link">复制链接</string>
+    <string name="delete_selected_channel">删除选中频道？</string>
+    <string name="delete_selected_channels">删除选中的所有频道？</string>
+    <string name="edit_feed_channel">编辑频道</string>
+    <string name="link_copied_to_clipboard">已复制到剪贴板</string>
+    <string name="mark_as_read">标记为已读</string>
+    <string name="mark_as_unread">标记为未读</string>
+    <string name="feed_item_list_empty">没有文章</string>
+    <string name="backup_feeds_successfully">频道已保存</string>
+    <string name="restore_feeds_backup_successfully">频道已恢复</string>
+    <string name="error_backup_feeds">无法保存频道</string>
+    <string name="error_restore_feeds_backup">无法恢复频道</string>
+    <string name="feed_item_open_article_url">打开文章</string>
+    <string name="feeds_backup_selection_dialog_title">选择备份文件</string>
+    <string name="error_import_invalid_format">无效格式</string>
+    <string name="feed_do_not_download_immediately">不立即下载</string>
+    <string name="feed_item_url_not_found">找不到链接</string>
+    <!-- Create torrent dialog -->
+    <string name="create_torrent">创建BT种子</string>
+    <string name="creating_torrent_progress">正在创建种子，请稍候…</string>
+    <string name="file_or_folder_for_seeding">要做种的文件或文件夹</string>
+    <string name="error_please_select_file_or_folder_for_seeding_first">先选择做种的文件或文件夹。</string>
+    <string name="tracker_urls">Tracker 链接</string>
+    <string name="web_seed_urls">Web 种子链接</string>
+    <string name="comments">备注</string>
+    <string name="tracker_urls_hint">（可选）按优先级每行输入一个 Tracker。</string>
+    <string name="web_seed_urls_hint">（可选）每行一个</string>
+    <string name="optional_hint">（可选）</string>
+    <string name="piece_size">区块大小</string>
+    <string name="create_torrent_options">选项</string>
+    <string name="option_start_seeding">开始做种</string>
+    <string name="option_private_torrent">私有种子</string>
+    <!-- piece_size_entries -->
+    <string name="piece_size_entries_0">自动</string>
+    <string name="piece_size_entries_1">16 KiB</string>
+    <string name="piece_size_entries_2">32 KiB</string>
+    <string name="piece_size_entries_3">64 KiB</string>
+    <string name="piece_size_entries_4">128 KiB</string>
+    <string name="piece_size_entries_5">256 KiB</string>
+    <string name="piece_size_entries_6">512 KiB</string>
+    <string name="piece_size_entries_7">1 MiB</string>
+    <string name="piece_size_entries_8">2 MiB</string>
+    <string name="piece_size_entries_9">4 MiB</string>
+    <string name="piece_size_entries_10">8 MiB</string>
+    <string name="piece_size_entries_11">16 MiB</string>
+    <string name="piece_size_entries_12">32 MiB</string>
+    <string name="invalid_url">无效链接：%1$s</string>
+    <string name="folder_is_empty">选中文件夹为空或筛选器排除了其所有的文件。</string>
+    <string name="error_create_torrent">无法创建种子</string>
+    <string name="skip_files">跳过文件</string>
+    <string name="skip_files_hint">输入文件名，多个名称中间用 “|” 隔开</string>
+    <string name="select_folder_to_save">选择保存文件夹</string>
+    <string name="torrent_saved_to">torrent 保存至 %1$s</string>
+    <string name="unable_to_open_file">无法打开所选文件</string>
+    <string name="unable_to_create_file">无法创建文件</string>
+    <!-- Log -->
+    <string name="log_journal">日志</string>
+    <string name="journal_list_empty">没有条目</string>
+    <string name="journal_start_recording">开始录制</string>
+    <string name="journal_stop_recording">停止录制</string>
+    <string name="journal_started_recording">开始录制</string>
+    <string name="journal_filter_session_log">会话日志</string>
+    <string name="journal_filter_dht_log">DHT 日志</string>
+    <string name="journal_filter_peer_log">连接日志</string>
+    <string name="journal_filter_portmap_log">UPnP/NAT-PMP日志</string>
+    <string name="journal_filter_torrent_log">种子日志</string>
+    <string name="journal_save_log_failed">无法保存日志</string>
+    <string name="journal_save_log_success">已保存日志：%1$s</string>
+    <string name="pref_journal_save_log_to">将日志保存到…</string>
+    <!-- Log settings -->
+    <string name="pref_journal_max_stored_entries">最大存储日志条目</string>
+    <!-- Settings -->
+    <!-- Headers -->
+    <string name="pref_header_appearance">界面</string>
+    <string name="pref_header_behavior">行为</string>
+    <string name="pref_header_storage">存储</string>
+    <string name="pref_header_limitations">限制</string>
+    <string name="pref_header_network">网络</string>
+    <string name="pref_header_scheduling">计划调度</string>
+    <string name="pref_header_feed">RSS 订阅</string>
+    <string name="pref_header_streaming">流媒体</string>
+    <!-- Storage settings -->
+    <string name="pref_save_torrents_in_title">将种子保存于…</string>
+    <string name="pref_move_after_download_title">下载完成后移动文件</string>
+    <string name="pref_move_after_download_in_title">下载完成后移动文件至</string>
+    <string name="pref_save_torrent_files_title">保存 .torrent 文件</string>
+    <string name="pref_save_torrent_files_summary">下载开始时保存 .torrent 文件。</string>
+    <string name="pref_save_torrent_files_in_title">保存 .torrent 文件于…</string>
+    <string name="pref_watch_dir_title">监测目录</string>
+    <string name="pref_watch_dir_summary">此文件夹中的 .torrent 文件会被自动添加然后删除。</string>
+    <string name="pref_dir_to_watch_title">要监测的目录</string>
+    <!-- Limitations settings -->
+    <string name="pref_speed_category">速度</string>
+    <string name="pref_max_download_speed_title">最大下载速度</string>
+    <string name="pref_max_upload_speed_title">最大上传速度</string>
+    <string name="pref_max_connections_title">最大连接数</string>
+    <string name="pref_max_connections_summary">（最少 2 个连接）</string>
+    <string name="pref_torrent_queueing_category">种子队列</string>
+    <string name="pref_max_active_uploads_title">最大活跃上传数</string>
+    <string name="pref_max_active_downloads_title">最大活跃下载数</string>
+    <string name="pref_max_active_torrents_title">最大活动种子数</string>
+    <string name="pref_max_connections_per_torrent_title">每个种子最大连接数</string>
+    <string name="pref_max_connections_per_torrent_summary">（最少 2 个连接）</string>
+    <string name="pref_max_uploads_per_torrent_title">每个种子最大上传连接数</string>
+    <string name="pref_auto_manage_title">自动管理</string>
+    <string name="pref_auto_manage_summary">种子可以随时自动恢复或暂停。（可能会减慢暂停/恢复的速度。）</string>
+    <string name="pref_max_active_uploads_downloads_dialog_msg">-1 无限大</string>
+    <!-- Appearance settings -->
+    <string name="pref_theme_category">主题设置</string>
+    <string name="pref_theme_title">主题</string>
+    <!-- pref_theme_entries -->
+    <string name="pref_theme_entries_0">明亮</string>
+    <string name="pref_theme_entries_1">深色</string>
+    <string name="pref_theme_entries_2">黑色</string>
+    <string name="pref_notification_category">通知设置</string>
+    <string name="pref_torrent_finish_notify_title">种子完成时通知</string>
+    <string name="pref_torrent_finish_notify_summary">种子下载完成后显示通知。</string>
+    <string name="pref_play_sound_notify_title">播放提示音</string>
+    <string name="pref_notify_sound_title">通知提示音</string>
+    <string name="pref_led_indicator_notify_title">LED 指示灯</string>
+    <string name="pref_led_indicator_color_notify_title">LED 指示灯颜色</string>
+    <string name="pref_vibration_notify_title">振动</string>
+    <!-- Behavior settings -->
+    <string name="pref_autostart_title">自动开始</string>
+    <string name="pref_autostart_summary">设备开机后自动运行应用程序。</string>
+    <!-- A synonym for word "unmetered" - unlimited-->
+    <string name="pref_umnetered_connections_only_title">仅限不按流量计费的连接</string>
+    <string name="pref_umnetered_connections_only_summary">仅使用没有流量额度的连接（例如，Wi-Fi 或以太网）。</string>
+    <string name="pref_enable_roaming_title">漫游</string>
+    <string name="pref_enable_roaming_summary">仅在设备未漫游时下载。</string>
+    <string name="pref_power_management_category">电源管理</string>
+    <string name="pref_keep_alive_title">保持运行</string>
+    <string name="pref_keep_alive_summary">让应用程序在后台运行。（下载完成后退出应用选项依旧有效。）</string>
+    <string name="pref_shutdown_downloads_complete_title">完成所有下载后关闭</string>
+    <string name="pref_shutdown_downloads_complete_summary">所有下载完成后关闭应用。</string>
+    <string name="pref_cpu_do_not_sleep_title">保持设备唤醒</string>
+    <string name="pref_cpu_do_not_sleep_summary">如果出现屏幕关闭时下载速度降低的情况可启用此选项。（会增加耗电量。）</string>
+    <string name="pref_download_and_upload_only_when_charging_title">仅在充电时下载和上传。</string>
+    <string name="pref_download_and_upload_only_when_charging_summary">除非设备正在充电，否则不传输任何文件。（未连接充电器时暂停所有种子。）</string>
+    <string name="pref_battery_control_title">电池控制</string>
+    <string name="pref_custom_battery_control_title">自定义电量百分比</string>
+    <string name="pref_custom_battery_control_value_title">电池控制百分比</string>
+    <string name="pref_battery_control_summary">当电池电量低于 %1$d%% 时，所有种子都将暂停。（此限制在充电时无效。）</string>
+    <string name="pref_custom_battery_control_summary">设置一个暂停下载的电量百分比%%。（启用该选项将忽略默认阈值 %1$d%%。）</string>
+    <string name="pref_custom_battery_control_dialog_summary">真要设置一个用于监控的电量百分比阈值%%吗？（下载时会增加电池使用。）</string>
+    <!-- Network settings -->
+    <string name="pref_proxy_settings_title">代理设置</string>
+    <string name="pref_enable_dht_title">DHT</string>
+    <string name="pref_enable_dht_summary">允许 BT 客户端不使用 Tracker 便能找到彼此。（启用此选项将增加电池使用量。）</string>
+    <string name="pref_enable_lsd_title">LSD</string>
+    <string name="pref_enable_lsd_summary">支持本地发现，旨在最大限度减少流量。</string>
+    <string name="pref_enable_utp_title">μTP</string>
+    <string name="pref_enable_utp_summary">目的是减轻传统 BT 客户端 TCP 连接中糟糕的延迟和其他拥塞控制问题，同时提供可靠有序的传输。</string>
+    <string name="pref_enable_upnp_title">UPnP</string>
+    <string name="pref_enable_natpmp_title">NAT-PMP</string>
+    <string name="pref_port_settings_category">端口设置</string>
+    <string name="pref_use_random_port_title">使用随机端口号</string>
+    <string name="pref_use_random_port_summarty">在区间 [%1$d,%2$d] 内随机设置起始端口，并将结束端口设置为 first+10。</string>
+    <string name="pref_port_range_title">端口范围</string>
+    <string name="pref_port_range_start_title">开始</string>
+    <string name="pref_port_range_end_title">结束</string>
+    <string name="pref_encryption_category">加密</string>
+    <string name="pref_enc_mode_title">模式</string>
+    <!-- pref_enc_mode_entries -->
+    <string name="pref_enc_mode_entries_0">偏好加密</string>
+    <string name="pref_enc_mode_entries_1">要求加密</string>
+    <string name="pref_enc_mode_entries_2">禁用加密</string>
+    <string name="pref_enc_in_connections_title">传入连接</string>
+    <string name="pref_enc_out_connections_title">传出连接</string>
+    <string name="pref_ip_filtering_category">IP 筛选</string>
+    <string name="pref_enable_ip_filtering_title">IP 筛选</string>
+    <string name="pref_enable_ip_filtering_summary">根据文件大小，在启动时应用筛选器可能会花费一些时间。（增加内存使用量。）</string>
+    <string name="pref_ip_filtering_file_title">筛选规则文件路径 （.dat ，.p2p ）</string>
+    <string name="pref_show_nat_errors">显示 NAT 错误</string>
+    <string name="pref_anonymous_mode_title">匿名模式</string>
+    <string name="pref_anonymous_mode_summary">非私有种子没有 user-agent 字符串。仅代理的 Tracker。监听套接字关闭。 通过 SOCKS5- 或 I2P 代理的传入连接（如果对等代理存在于 Tracker 代理计算机）。NAP-PMP、UPnP、DHT及本地发现关闭。</string>
+    <string name="pref_seeding_outgoing_connections_title">用于做种的传出连接</string>
+    <string name="pref_seeding_outgoing_connections_summary">让做种的种子建立传出连接。（可能代价不菲）</string>
+    <!-- Proxy settings -->
+    <string name="pref_proxy_type_title">代理类型</string>
+    <!-- pref_proxy_type_entries -->
+    <string name="pref_proxy_type_entries_0">（无）</string>
+    <string name="pref_proxy_type_entries_1">SOCKS4</string>
+    <string name="pref_proxy_type_entries_2">SOCKS5</string>
+    <string name="pref_proxy_type_entries_3">HTTP</string>
+    <string name="pref_proxy_address_title">主机</string>
+    <string name="pref_proxy_port_title">端口</string>
+    <string name="pref_proxy_peers_too_title">同时用于连接</string>
+    <string name="pref_proxy_peers_too_summary">与 BT Tracker、其他用户和网络种子的连接将经过代理。不影响 DHT。</string>
+    <string name="pref_proxy_requires_auth_title">需要授权认证</string>
+    <string name="pref_proxy_requires_auth_summary">警告：密码保存为常规文件。</string>
+    <string name="pref_proxy_login_title">用户名</string>
+    <string name="pref_proxy_password_title">密码</string>
+    <!-- Schedule settings -->
+    <string name="pref_enable_scheduling_start_title">启动时间</string>
+    <string name="pref_enable_scheduling_start_summary">在指定时间启动应用。种子将以上次关闭前的状态运行。</string>
+    <string name="pref_enable_scheduling_shutdown_title">关闭时间</string>
+    <string name="pref_enable_scheduling_shutdown_summary">在指定时间关闭应用</string>
+    <string name="pref_scheduling_run_only_once_title">只运行一次</string>
+    <string name="pref_scheduling_switch_wifi_title">切换 Wi-Fi 状态</string>
+    <string name="pref_scheduling_switch_wifi_summary">随计划调度开启或关闭 Wi-Fi。</string>
+    <!-- Feed settings -->
+    <string name="pref_feed_auto_refresh_title">自动刷新频道</string>
+    <string name="pref_feed_auto_refresh_summary">在后台定期刷新频道。</string>
+    <string name="pref_feed_refresh_interval_title">刷新间隔</string>
+    <!-- pref_feed_refresh_intervals_entries -->
+    <string name="pref_feed_refresh_intervals_entries_0">15 分钟</string>
+    <string name="pref_feed_refresh_intervals_entries_1">30 分钟</string>
+    <string name="pref_feed_refresh_intervals_entries_2">1 小时</string>
+    <string name="pref_feed_refresh_intervals_entries_3">2 小时</string>
+    <string name="pref_feed_refresh_intervals_entries_4">6 小时</string>
+    <string name="pref_feed_refresh_intervals_entries_5">12 小时</string>
+    <string name="pref_feed_refresh_intervals_entries_6">1 天</string>
+    <!-- A synonym for word "unmetered" - unlimited-->
+    <string name="pref_feed_auto_refresh_unmetered_connections_only_title">仅限于不按流量计费的连接</string>
+    <string name="pref_feed_auto_refresh_unmetered_connections_only_summary">仅通过没有流量额度的连接刷新（例如，Wi-Fi 或以太网）。</string>
+    <string name="pref_feed_auto_refresh_enable_roaming_title">漫游</string>
+    <string name="pref_feed_keep_items_time_title">保留文章</string>
+    <!-- pref_feed_keep_items_time_entries -->
+    <string name="pref_feed_keep_items_time_entries_0">1 天</string>
+    <string name="pref_feed_keep_items_time_entries_1">2 天</string>
+    <string name="pref_feed_keep_items_time_entries_2">4 天</string>
+    <string name="pref_feed_keep_items_time_entries_3">1 周</string>
+    <string name="pref_feed_keep_items_time_entries_4">2 周</string>
+    <string name="pref_feed_keep_items_time_entries_5">1 个月</string>
+    <string name="pref_feed_keep_items_time_entries_6">2 个月</string>
+    <string name="pref_feed_keep_items_time_entries_7">3 个月</string>
+    <string name="pref_feed_keep_items_time_entries_8">始终</string>
+    <string name="pref_feed_start_torrents_title">自动开始种子任务</string>
+    <string name="pref_feed_start_torrents_summary">添加后下载种子。</string>
+    <string name="pref_feed_remove_duplicates_title">禁止重复项</string>
+    <string name="pref_feed_remove_duplicates_summary">跳过下载已经存在的文件标题。</string>
+    <!-- Streaming settings -->
+    <string name="pref_streaming_enable_title">流媒体功能</string>
+    <string name="pref_streaming_enable_summary">允许使用网页浏览器或使用 HTTP/S URLs 的媒体播放器从种子下载单独文件。</string>
+    <string name="pref_streaming_hostname">主机名</string>
+    <string name="pref_streaming_port">端口</string>
+    <string name="pref_streaming_error">所选用于流媒体的端口或主机名正忙或不正确，请修正。</string>
+    <!-- About dialog -->
+    <string name="about_title">关于</string>
+    <string name="about_description">更多信息及如何帮助项目：&lt;a href=https://gitlab.com/proninyaroslav/libretorrent&gt;https://gitlab.com/proninyaroslav/libretorrent&lt;/a&gt;&lt;br&gt;&lt;br&gt; LibreTorrent 是一款面向 Android 4+ 系统的 copyleft 的自由 (&lt;a href=https://www.gnu.org/copyleft/gpl.html&gt;GPLv3+&lt;/a&gt;) 种子客户端，基于 libtorrent (Java wrapper &lt;a href=https://github.com/aldenml/libtorrent4j&gt;libtorrent4j&lt;/a&gt;) 库。&lt;br&gt;&lt;br&gt;</string>
+    <string name="about_changelog">更新日志</string>
+    <string name="pref_watch_dir_delete_file_title">添加后删除 .torrent 文件</string>
+    <string name="pref_default_trackers_list_summary">用于下列情形的 Tracker 列表：
+\n1. 添加种子时，默认列表会自动添加到种子列表中。
+\n2. 用于获取磁力链接。</string>
+    <string name="pref_default_trackers_list_title">默认 Tracker</string>
+    <string name="pref_foreground_notify_status_filter">状态筛选器</string>
+    <string name="pref_foreground_notification_category">前台通知设置</string>
+    <string name="pref_foreground_notify_sorting_entries_7">进度（最多在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_6">进度（最少在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_9">预计用时（最长在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_12">不排序</string>
+    <string name="pref_foreground_notify_sorting_entries_11">用户数（最多在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_10">用户数（最少在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_8">预计用时（最短在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_5">大小（最大在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_4">大小（最小在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_3">添加日期（最旧在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_2">添加日期（最新在前）</string>
+    <string name="pref_foreground_notify_sorting_entries_1">名称（Z - A）</string>
+    <string name="pref_foreground_notify_sorting_entries_0">名称（A - Z）</string>
+    <string name="pref_foreground_notify_sorting">排序中</string>
+    <string name="pref_foreground_notify_status_filter_entries_4">错误</string>
+    <string name="pref_foreground_notify_status_filter_entries_3">正在下载元数据…</string>
+    <string name="pref_foreground_notify_status_filter_entries_2">已下载</string>
+    <string name="pref_foreground_notify_status_filter_entries_1">下载中…</string>
+    <string name="pref_foreground_notify_status_filter_entries_0">全部</string>
+    <string name="pref_foreground_notify_combined_pause_button_summary">组合两个按钮：全部暂停和全部恢复。 该按钮将像开关一样工作。 警告：按钮状态不受手动暂停/恢复种子的影响。</string>
+    <string name="pref_foreground_notify_combined_pause_button_title">组合式暂停按钮</string>
+    <string name="error_open_torrent">无法打开种子文件</string>
+    <string name="exact_alarm_permission_warning">要使调度程序工作，你必须在一个特殊的系统对话框中获得权限。是否继续？</string>
+    <string name="perm_denied_warning_android_r">访问所有文件权限是下载种子和访问任意文件夹中 .torrent 文件所必需的。如果没有此权限，LibreTorrent 将只能访问有限数量的文件夹。是否确实要拒绝此权限？</string>
+    <string name="manage_all_files_warning_dialog_description">如果您想要保存种子到自定义文件夹而不是\"Downloads\"之类的文件夹，那就不要使用 LibreTorrent 的 Google Play 版本。
+\n在项目页面上有其它的下载源。</string>
+    <string name="manage_all_files_warning_dialog_title">警告</string>
+    <string name="pref_validate_https_trackers_summary">HTTPS trackers 和 HTTPS web 种子的证书将在系统证书存储中进行验证。</string>
+    <string name="pref_validate_https_trackers_title">验证 HTTPS trackers 的证书</string>
+    <string name="download_first_last_pieces">优先下载最前与最后的区块</string>
+    <string name="torrent_speed_limit_dialog">以 KiB/s 为单位设置速度。注意，设置一个高于全局限制的种子速度上限将不会覆盖全局限制。</string>
+    <string name="apply_settings_after_reboot">将在重启应用后应用更改。</string>
+    <string name="pref_posix_disk_io_title">POSIX 磁盘 I/O</string>
+    <string name="pref_posix_disk_io_summary">注：请在特定情形下使用本选项，比如支持某些 SD 卡文件系统。启动简单的 POSIX 磁盘 I/O，用于没有 64 位虚拟地址空间或者不支持内存映射文件的系统。</string>
+    <string name="torrent_version_entries_v1_only">仅 V1</string>
+    <string name="torrent_version_entries_v2_only">仅 V2</string>
+    <string name="torrent_version">Torrent 版本</string>
+    <string name="torrent_version_entries_hybrid">混合</string>
+    <string name="go_to_folder">转到文件夹</string>
+    <string name="error_open_ip_filter_file">无法打开 IP 筛选器文件</string>
+    <string name="error_select_folder">无法打开所选文件夹</string>
+    <string name="single_downloading_torrent_notify_template">%1$d%% • %2$s • ↓ %3$s/秒</string>
+    <string name="foreground_notify_template">↓ %1$s/秒 | ↑ %2$s/s • %3$s</string>
+    <string name="error_fetch_torrent_metadata">无法取得元数据</string>
+    <string name="feed_download_immediately">立即下载</string>
+    <string name="pref_enable_auto_manage_title">启用自动管理</string>
+    <string name="pref_theme_dynamic_colors_title">动态颜色</string>
+    <string name="pref_theme_dynamic_colors_summary">主题色根据系统设置、壁纸或所选颜色调整</string>
+    <string name="pref_theme_entries_3">系统</string>
+    <string name="pref_use_anonymous_mode">使用匿名模式</string>
+    <string name="pref_enable_feed_auto_refresh">启用自动刷新</string>
+    <string name="pref_enable_streaming">启用串流</string>
+    <string name="torrents">种子</string>
+    <string name="ascending_sort">升序排列</string>
+    <string name="descending_sort">降序排列</string>
+    <string name="current_storage">当前存储</string>
+    <string name="select">选择</string>
+    <string name="create">创建</string>
+    <string name="color_picker">颜色选择器</string>
+    <string name="load_message">加载，请等待…</string>
+    <string name="reset_filter">重置过滤器</string>
+    <string name="feed_articles">文章</string>
+    <string name="enable_journal">启用日志</string>
+    <string name="scroll_up">向上滚动</string>
+    <string name="scroll_down">向下滚动</string>
+    <plurals name="torrent_info_size_template_plural">
+        <item quantity="other">%1$s • %2$d 个文件</item>
+    </plurals>
+    <string name="pref_locale_title">语言</string>
+    <string name="pref_theme_black_backgrounds_summary">在深色主题下使用黑色背景</string>
+    <string name="pref_black_backgrounds">黑色背景</string>
+    <string name="pref_locale_summary">更改应用语言</string>
+    <string name="pref_locale_system_default">系统默认</string>
+    <string name="pref_proxy_require_all_connections_title">要求所有连接均使用代理</string>
+    <string name="pref_proxy_require_all_connections_summary">使用代理时禁用 DHT、本地服务发现、UPnP 和 NAT−PMP。这些功能无法通过代理进行路由，否则即使配置了代理，也会暴露真实 IP 地址和 DNS 查询。</string>
+</resources>

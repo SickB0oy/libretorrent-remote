@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="org.proninyaroslav.libretorrent.ui.addfeed.AddFeedViewModel" />
+        <variable
+            name="viewModel"
+            type="org.proninyaroslav.libretorrent.ui.addfeed.AddFeedViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dialog_padding"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minWidth="@dimen/min_width_dialog"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/feed_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.mutableParams.name}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/link"
+                    android:layout_toStartOf="@+id/clipboard_button">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textNoSuggestions"
+                        android:text="@={viewModel.mutableParams.url}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/clipboard_button"
+                    style="?attr/materialIconButtonFilledTonalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/clipboard"
+                    android:visibility="@{viewModel.showClipboardButton ? View.VISIBLE : View.GONE}"
+                    app:icon="@drawable/ic_content_copy_24px" />
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/auto_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/feed_auto_download"
+                android:checked="@={viewModel.mutableParams.autoDownload}"/>
+
+            <CheckBox
+                android:id="@+id/download_immediately"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:enabled="@{viewModel.mutableParams.autoDownload}"
+                android:visibility="@{viewModel.mode == AddFeedViewModel.Mode.ADD ? View.VISIBLE : View.GONE}"
+                android:text="@string/feed_download_immediately"
+                android:checked="@={viewModel.mutableParams.downloadImmediately}" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{viewModel.mutableParams.autoDownload}"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_help_24px"
+                android:hint="@string/filter">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:text="@={viewModel.mutableParams.filter}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:el_duration="5"
+                app:el_parallax="0"
+                app:el_expanded="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/feed_filter_prompt_one_per_line" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="16dp"
+                        android:text="@string/feed_filter_prompt" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+            <CheckBox
+                android:id="@+id/use_regex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:enabled="@{viewModel.mutableParams.autoDownload}"
+                android:text="@string/feed_use_regex"
+                android:checked="@={viewModel.mutableParams.regexFilter}"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

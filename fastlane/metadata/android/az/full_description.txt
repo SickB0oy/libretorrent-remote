@@ -1,0 +1,21 @@
+* Lisenziyalı GPLv3+. İstifadə edin, baxın, dəyişdirin və paylaşın; hamı ilə. 
+* BitTorrent 2.0 və WebTorrent dəstəyi 
+* Yükləmək üçün hansı faylları seçin. 
+* Yükləyərkən faylları köçürün. 
+* Yüklənmiş faylları başqa qovluğa və ya xarici diskə avtomatik köçürün. 
+* Ardıcıl yükləmələrlə axın faylları. 
+
+* Android TV. 
+* Material dizaynı, qaranlıq və qara mövzu və planşet UI. 
+* Fərdiləşdirilə bilən şəbəkə, batareya və UI parametrləri və s. 
+* 35+ tərcümə. 
+* Planlaşdırma. 
+* Atom/RSS meneceri ilə avtomatik yükləmə. 
+* Çoxlu və böyük faylları olan torrentlər yaradın. 
+
+* HTTP\S və maqnit bağlantıları. 
+* DHT, PeX, şifrələmə, LSD, UPnP, NAT*PMP, µTP. 
+* IP filtrasiyası (eMule dat və PeerGuardian). 
+* İzləyicilər və həmyaşıdlar üçün proxy dəstəkləyir. 
+* Libtorrent4j əsasında. 
+* Və daha çox.

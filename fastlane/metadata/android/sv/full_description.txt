@@ -1,0 +1,19 @@
+* Licensierad GPLv3+. Använd, se, ändra och dela; med alla.
+* Stöd för BitTorrent 2.0 och WebTorrent
+* Välj vilka filer som ska hämtas.
+* Flytta filer under hämtningen.
+* Automatiskt flytta nedladdade filer till en annan mapp eller extern enhet.
+* Strömma filer, med sekventiella hämtningar.
+* Android TV.
+* Materialdesign, mörkt och svart tema och surfplattans användargränssnitt.
+* Anpassningsbara inställningar för nätverk, batteri och användargränssnitt etc.
+* Över 35 översättningar.
+* Schemaläggning.
+* Automatisk hämtning, med Atom/RSS-hanterare.
+* Skapa torrents, med många och stora filer.
+* HTTP\S och magnetlänkar.
+* DHT, PeX, kryptering, LSD, UPnP, NAT*PMP, µTP.
+* IP-filtrering (eMule dat och PeerGuardian).
+* Stödjer proxy för spårare och jämlikar.
+* Baserat på libtorrent4j.
+* Och mer.

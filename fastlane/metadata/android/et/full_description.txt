@@ -1,0 +1,19 @@
+* Litsentsiga GPLv3+. Kasuta, vaata, muuda ja jaga; koos kõigega.
+* BitTorrent 2.0 ja WebTorrent'i tugi.
+* Vali milliseid faile allalaadida.
+* Liiguta faile allalaadimise ajal.
+* Auto-teisalda allalaetud faile teise kausta või välisele andmekandjale.
+* Striimi faile, kasutades järjestikkulist allalaadimist.
+* Android TV.
+* Material disain, tume ja must välimus, ja tablet UI.
+* Muudetav interneti, aku, ja UI seaded, jne.
+* 35+ tõlget.
+* Ajakavaplaanid.
+* Auto-allalaadimine, koos Atom/RSS halduriga.
+* Loo torrenteid, koos mitme või suurte failidega.
+* HTTP\S ja Magnet lingid.
+* DHT, PeX, krüpteering, LSD, UPnP, NAT*PMP, µTP.
+* IP filtrid (eMule dat ja PeerGuardian).
+* Proksi tugi nii jälitajate kui ka partneritega.
+* Kasutatud on libtorrent4j.
+* Ja rohkemgi.

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="org.proninyaroslav.libretorrent.ui.addlink.AddLinkViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/min_width_dialog"
+        android:padding="@dimen/dialog_padding">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/clipboard_button"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textNoSuggestions"
+                android:text="@={viewModel.link}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/clipboard_button"
+            style="?attr/materialIconButtonFilledTonalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/clipboard"
+            android:visibility="@{viewModel.showClipboardButton ? View.VISIBLE : View.GONE}"
+            app:icon="@drawable/ic_content_copy_24px" />
+    </RelativeLayout>
+</layout>

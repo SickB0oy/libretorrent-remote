@@ -1,0 +1,19 @@
+* Llicenciat amb GPLv3+. Utilitzar, veure, canviar i compartir; amb tots.
+* Implementació de BitTorrent 2.0 i WebTorrent.
+* Seleccioneu quins fitxers voleu baixar.
+* Moveu els fitxers mentre es baixa.
+* Moveu automàticament els fitxers baixats a una altra carpeta o unitat externa.
+* Fitxers de flux, amb baixades seqüencials.
+* Android TV.
+* Material design, tema fosc i negre, i IU de tauleta.
+* Configuració de xarxa, bateria i interfície d'usuari personalitzables, etc.
+* Més de 35 traduccions.
+* Programació.
+* Autodescàrrega, amb el gestor Atom/RSS.
+* Creació torrents, amb molts fitxers i molt grossos.
+* Enllaços HTTP\S i magnet.
+* DHT, PeX, xifratge, LSD, UPnP, NATPMP, µTP.
+* Filtre IP (dat eMule i PeerGuardian).
+* Suporta servidors intermediaris per a rastrejadors i parells.
+* Basat en libtorrent4j.
+* I més.

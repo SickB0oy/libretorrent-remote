@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    style="@style/App.Components.ListItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:minHeight="@dimen/list_item_three_lines_height">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@id/menu"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/App.Components.ListItem.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                tools:text="Tag" />
+
+            <TextView
+                android:id="@+id/pub_date"
+                style="@style/App.Components.ListItem.SupportingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="01.01.25 00:00" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/menu"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/menu"
+            app:icon="@drawable/ic_more_vert_24px" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

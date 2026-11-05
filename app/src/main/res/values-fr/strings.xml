@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Global string -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="error">Erreur</string>
+    <string name="warning">Attention</string>
+    <string name="shutdown">Éteindre</string>
+    <string name="replace">Remplacer</string>
+    <string name="add">Ajouter</string>
+    <string name="delete">Supprimer</string>
+    <string name="deleting">Suppression…</string>
+    <string name="select_all">Sélectionner tout</string>
+    <string name="save">Enregistrer</string>
+    <string name="search">Chercher</string>
+    <string name="not_available">s.o.</string>
+    <!-- 1 d. 1 h. 1 m -->
+    <string name="elapsed_time_format_d_h_mm">%1$d j %2$d h %3$d min</string>
+    <!-- 1 h. 1 m. 1 s -->
+    <string name="elapsed_time_format_h_mm_ss">%1$d h %2$d min %3$d s</string>
+    <!-- 1 m. 1 s -->
+    <string name="elapsed_time_format_mm_ss">%1$d min %2$d s</string>
+    <!-- 1 s -->
+    <string name="elapsed_time_format_ss">%1$d s</string>
+    <string name="def">Défaut</string>
+    <string name="foreground_notification">Notification de premier plan</string>
+    <string name="link">Lien</string>
+    <string name="filter">Filtre</string>
+    <string name="refresh">Actualiser</string>
+    <string name="edit">Modifier</string>
+    <string name="menu">Menu</string>
+    <string name="open_navigation_drawer">Ouvrir le panneau de navigation</string>
+    <string name="close_navigation_drawer">Fermer le panneau de navigation</string>
+    <string name="file">Fichier</string>
+    <string name="folder">Dossier</string>
+    <string name="finished">Terminé</string>
+    <string name="pause_all">Tout mettre en pause</string>
+    <string name="resume_all">Tout reprendre</string>
+    <string name="all">Tout</string>
+    <string name="details">Détails</string>
+    <string name="stats">Statistiques</string>
+    <string name="filters">Filtres</string>
+    <string name="apply">Appliquer</string>
+    <string name="clipboard">Presse-papier</string>
+    <string name="switch_on">Activé</string>
+    <!-- Main window -->
+    <string name="delete_torrent_with_downloaded_files">Supprimer aussi le contenu téléchargé</string>
+    <string name="delete_selected_torrent">Supprimer le torrent sélectionné ? (Impossible d’annuler.)</string>
+    <string name="delete_selected_torrents">Supprimer les torrents sélectionnés ? (Impossible d\'annuler.)</string>
+    <string name="force_recheck_torrent">Forcer la revérification</string>
+    <string name="force_announce_torrent">Forcer-l\'annonce</string>
+    <string name="add_link">Ajouter un lien</string>
+    <string name="dialog_add_link_title">Entrez la valeur infohash, le lien magnet ou le lien HTTP/S</string>
+    <string name="torrent_list_empty">Aucun torrent</string>
+    <string name="select_or_add_torrent">Sélectionner ou ajouter un torrent</string>
+    <string name="error_empty_link">Entrez un lien</string>
+    <string name="error_invalid_link">Lien non valide</string>
+    <string name="error_open_torrent_file">Impossible d\'ouvrir le fichier .torrent</string>
+    <string name="open_file">Ouvrir un fichier</string>
+    <string name="settings">Paramètres</string>
+    <string name="ip_filter_add_error">Impossible d\'ajouter le filtre IP (%1$d a échoué). Le fichier est peut-être endommagé ou à un format incorrect ?</string>
+    <string name="ip_filter_add_success">Le filtre IP a été ajouté</string>
+    <string name="proxy_settings_applied">Utilisation des nouveaux paramètres du serveur proxy.</string>
+    <string name="proxy_settings_apply_after_reboot">Redémarrez l\'application pour utiliser les nouveaux paramètres du proxy.</string>
+    <string name="theme_settings_apply_after_reboot">Redémarrez l\'application pour utiliser le nouveau thème.</string>
+    <string name="about">À propos</string>
+    <!-- Navigation drawer -->
+    <string name="session_stats_dht_nodes">Nœuds DHT : %1$d</string>
+    <!-- total download/upload • download/upload speed -->
+    <string name="session_stats_download_upload">%1$s • %2$s/s</string>
+    <string name="session_stats_listen_port">Écoute du port : %1$s</string>
+    <!-- Status -->
+    <string name="drawer_status">Statut</string>
+    <string name="drawer_status_downloading">Téléchargement en cours…</string>
+    <string name="drawer_status_downloaded">Téléchargé</string>
+    <string name="drawer_status_downloading_metadata">Téléchargement des métadonnées en cours…</string>
+    <string name="drawer_status_error">Erreur</string>
+    <!-- Sorting -->
+    <string name="drawer_sorting">Trier par</string>
+    <string name="drawer_sorting_name">Nom</string>
+    <string name="drawer_sorting_date_added">Date ajoutée</string>
+    <string name="drawer_sorting_size">Taille</string>
+    <string name="drawer_sorting_progress">Progression</string>
+    <string name="drawer_sorting_ETA">Heure d\'arrivée prévue</string>
+    <string name="drawer_sorting_peers">Popularité</string>
+    <string name="drawer_sorting_no_sorting">Aucun tri</string>
+    <!-- Date added -->
+    <string name="drawer_date_added">Date ajoutée</string>
+    <string name="drawer_date_added_today">Aujourd\'hui</string>
+    <string name="drawer_date_added_yesterday">Hier</string>
+    <string name="drawer_date_added_week">Semaine</string>
+    <string name="drawer_date_added_month">Mois</string>
+    <string name="drawer_date_added_year">Année</string>
+    <string name="tags">Étiquettes</string>
+    <string name="add_tag">Ajouter une étiquette</string>
+    <string name="edit_tag">Modifier l\'étiquette</string>
+    <string name="tag_name">Nom de l\'étiquette</string>
+    <string name="tag_color">Couleur de l\'étiquette</string>
+    <string name="add_tag_failed">Impossible d\'ajouter une étiquette</string>
+    <string name="tag_deleting_failed">Impossible de supprimer l\'étiquette</string>
+    <string name="tag_already_exists">Une étiquette avec le même nom existe déjà</string>
+    <string name="no_tags">Aucune étiquette</string>
+    <string name="select_tag">Sélectionnez une étiquette</string>
+    <string name="new_tag">Nouvelle étiquette</string>
+    <string name="without_tags">Sans étiquettes</string>
+    <!-- Foreground notification -->
+    <!-- percent • ETA • download speed • name -->
+    <string name="downloading_torrent_notify_template">%1$d%% • %2$s • ↓ %3$s/s • %4$s</string>
+    <!-- status • upload speed • name -->
+    <string name="seeding_torrent_notify_template">%1$s • ↑ %2$s/s • %3$s</string>
+    <!-- status • name -->
+    <string name="other_torrent_notify_template">%1$s • %2$s</string>
+    <string name="torrent_count_notify_template">%1$d ⬇ de %2$d</string>
+    <string name="app_running_in_the_background">Fonctionne en arrière-plan…</string>
+    <string name="network_online">En ligne</string>
+    <string name="network_offline">Hors ligne</string>
+    <string name="notify_shutting_down">Arrêt en cours…</string>
+    <!-- Error notification -->
+    <string name="torrent_error_notify_title">Erreur de torrent</string>
+    <string name="error_template">Erreur : %1$s</string>
+    <string name="restore_torrent_error">Impossible de restaurer le torrent de la session précédente.</string>
+    <string name="session_error_title">Erreur de session</string>
+    <!-- ip_address:port, type (error: error_msg)-->
+    <string name="nat_error_title">Erreur NAT</string>
+    <!-- Finish notification -->
+    <string name="torrent_finished_notify">Torrent terminé</string>
+    <!-- Torrents move notification -->
+    <string name="torrent_moving_title">Déplacement du torrent…</string>
+    <string name="torrent_moving_content">Veuillez patienter pendant le déplacement de %1$s…</string>
+    <string name="torrent_move_success">Torrent déplacé</string>
+    <string name="torrent_move_fail">Impossible de déplacer le torrent</string>
+    <!-- Added notification -->
+    <!-- Torrent list item -->
+    <!-- downloaded/total (percent) -->
+    <string name="download_counter_template">%1$s/%2$s (%3$d%%)</string>
+    <!-- ↓ download speed | ↑ upload speed -->
+    <string name="download_upload_speed_template">↓ %1$s/s | ↑ %2$s/s</string>
+    <!-- downloaded/total • percent • ETA -->
+    <string name="download_counter_ETA_template">%1$s/%2$s • %3$d%% %4$s</string>
+    <!-- connected/total -->
+    <string name="peers_template">%1$d/%2$d</string>
+    <string name="torrent_status_downloading">Téléchargement en cours…</string>
+    <string name="torrent_status_seeding">Essaimage…</string>
+    <string name="torrent_status_paused">Pause</string>
+    <string name="torrent_status_stopped">Arrêté</string>
+    <string name="torrent_status_checking">Vérification…</string>
+    <string name="torrent_status_finished">Terminé</string>
+    <string name="torrent_status_downloading_metadata">Téléchargement des métadonnées…</string>
+    <!-- Permission dialog -->
+    <string name="perm_denied_title">Permission refusée</string>
+    <string name="perm_denied_warning">L\'autorisation de stockage est nécessaire pour télécharger des torrents et accéder aux fichiers .torrent. Voulez-vous vraiment refuser cette autorisation ?</string>
+    <!-- Add torrent dialog -->
+    <string name="add_torrent_title">Ajouter un torrent</string>
+    <string name="error_decode_torrent">Impossible de décoder le fichier .torrent. Peut-être est-il abîmé ou dans un mauvais format ?</string>
+    <string name="error_io_torrent">Erreur lors de la lecture du fichier .torrent</string>
+    <string name="error_fetch_link">Impossible d\'extraire les données du lien</string>
+    <string name="error_invalid_link_or_path">Le lien ou chemin vers le torrent n\'est pas valide</string>
+    <string name="error_add_torrent">Impossible d\'ajouter le torrent</string>
+    <string name="error_file_not_found_add_torrent">Impossible d\'ajouter le torrent. Le fichier .torrent a peut-être été déplacé ou supprimé ?</string>
+    <string name="error_io_add_torrent">Impossible d\'ajouter le torrent. Erreur I/O.</string>
+    <string name="torrent_exist">Puisque le torrent existe déjà, ils ont été fusionnés.</string>
+    <string name="error_field_required">Ce champ est requis</string>
+    <string name="error_no_files_selected">Aucun fichier sélectionné</string>
+    <string name="free_space">%1$s libre</string>
+    <string name="error_free_space">Il n\'y a pas assez d\'espace libre pour télécharger les fichiers sélectionnés.</string>
+    <string name="files_size">%1$s sur %2$s sélectionné</string>
+    <string name="start_torrent">Démarrer le torrent</string>
+    <string name="file_is_too_large_error">Le fichier est trop volumineux</string>
+    <string name="unable_to_open_folder">Impossible d\'ouvrir le dossier sélectionné. Essayez d\'en sélectionner un autre.</string>
+    <string name="error_empty_name">Veuillez saisir un nom</string>
+    <string name="ignore_free_space">Ignorer l\'espace de stockage faible</string>
+    <!-- Torrent info -->
+    <string name="torrent_info">Détails</string>
+    <string name="torrent_files">Fichiers</string>
+    <string name="torrent_name">Nom</string>
+    <string name="upload_torrent_into">Télécharger dans…</string>
+    <string name="torrent_size">Taille</string>
+    <string name="torrent_file_count">Nombre de fichiers</string>
+    <string name="torrent_hash_sum">Somme de contrôle</string>
+    <string name="torrent_comment">Commentaire</string>
+    <string name="torrent_create_date">Créé</string>
+    <string name="torrent_created_in_program">Créé avec</string>
+    <string name="sequential_download">Téléchargement séquentiel</string>
+    <!-- Filemanager dialog -->
+    <string name="dir_chooser_title">Sélection de dossier</string>
+    <string name="file_chooser_title">Sélection de fichier</string>
+    <string name="torrent_file_chooser_title">Sélection de torrent</string>
+    <string name="dialog_new_folder_title">Nouveau dossier</string>
+    <string name="error_dialog_new_folder">Impossible de créer un nouveau dossier</string>
+    <string name="error_open_dir">Impossible d\'ouvrir le dossier</string>
+    <string name="home_directory">Accueil</string>
+    <!-- name (size) -->
+    <string name="storage_name_and_size" formatted="false">%1$s (%2$s)</string>
+    <string name="internal_storage_name">Stockage interne</string>
+    <string name="external_storage_name" formatted="false">Stockage externe %1$d</string>
+    <string name="permission_denied">Permission refusée</string>
+    <string name="save_file">Enregistrer le fichier</string>
+    <string name="file_name">Nom de fichier</string>
+    <string name="error_file_exists">Le fichier existe déjà</string>
+    <string name="file_name_is_empty">Veuillez entrer un nom de fichier</string>
+    <string name="replace_file">Remplacer le fichier</string>
+    <string name="parent_folder">Dossier parent</string>
+    <!-- Error dialog -->
+    <string name="report">Rapport</string>
+    <string name="more_details">Plus de détails</string>
+    <!-- Detail torrent dialog -->
+    <!-- priority • downloaded/total • percent • availability -->
+    <string name="file_downloading_status_template">%1$s • %2$s/%3$s • %4$d%% •
+\nDisponibilité : %5$s</string>
+    <string name="file_priority_normal">Normal</string>
+    <string name="file_priority_low">Ignorer</string>
+    <string name="file_priority_high">Haute</string>
+    <string name="file_priority_mixed">Mixte</string>
+    <string name="change_priority">Priorité</string>
+    <string name="dialog_change_priority_title">Changer la priorité</string>
+    <string name="change_priority_low">Basse (ne pas télécharger)</string>
+    <string name="change_priority_normal">Normal</string>
+    <string name="change_priority_high">Haute</string>
+    <string name="torrent_state">État</string>
+    <string name="torrent_speed">Vitesse</string>
+    <string name="torrent_downloaded">Téléchargé</string>
+    <string name="torrent_ETA">Temps restant</string>
+    <string name="torrent_peers">Pairs</string>
+    <string name="torrent_leechers">Sangsues</string>
+    <!-- connected (total) -->
+    <string name="torrent_peers_template">%1$d (%2$d)</string>
+    <string name="torrent_uploaded">Transféré</string>
+    <string name="torrent_share_ratio">Ratio de partage</string>
+    <string name="torrent_active_time">Temps d\'activité</string>
+    <string name="torrent_seeding_time">Temps de partage</string>
+    <string name="torrent_pieces">Pièces</string>
+    <!-- downloaded/total (piece length) -->
+    <string name="torrent_pieces_template">%1$d/%2$d (%3$s)</string>
+    <string name="torrent_trackers">Traqueurs</string>
+    <string name="tracker_state_working">Fonctionne</string>
+    <string name="tracker_state_not_working">Ne fonctionne pas</string>
+    <string name="tracker_state_updating">Actualisation…</string>
+    <string name="tracker_state_not_contacted">Pas encore contacté</string>
+    <string name="share_tracker_url">Partager l\'URL…</string>
+    <string name="delete_selected_tracker">Supprimer le tracker sélectionné ?</string>
+    <string name="delete_selected_trackers">Supprimer les trackers sélectionnés ?</string>
+    <string name="add_trackers">Ajouter des trackers</string>
+    <string name="dialog_add_trackers">(Un par ligne)</string>
+    <string name="open_using">Ouvrir avec</string>
+    <string name="peer_port">Port : %1$d</string>
+    <string name="peer_relevance">Ratio : %1$.1f</string>
+    <string name="peer_connection_type">Connexion : %1$s</string>
+    <!-- ↓ total download • ↑ total upload -->
+    <string name="peer_total_download_upload">↓ %1$s • ↑ %2$s</string>
+    <string name="peer_client">Client : %1$s</string>
+    <string name="peer_connection_type_bittorrent">BT</string>
+    <string name="peer_connection_type_web">Web</string>
+    <string name="peer_connection_type_utp">μTP</string>
+    <string name="peer_list_empty">Ce torrent n\'est pas encore connecté à des pairs</string>
+    <string name="piece_map">Carte des pièces</string>
+    <string name="resume_torrent">Reprendre</string>
+    <string name="pause_torrent">Pause</string>
+    <string name="share_magnet">Partager le lien magnet</string>
+    <string name="save_torrent_file">Sauvegarder le fichier torrent</string>
+    <string name="torrent_speed_limit">Limite de vitesse</string>
+    <string name="share_via">Partager avec…</string>
+    <string name="save_torrent_file_successfully">Fichier .torrent enregistré</string>
+    <string name="error_save_torrent_file">Impossible d\'enregistrer le fichier torrent</string>
+    <string name="speed_limit_title">Vitesse max</string>
+    <string name="upload_speed">Téléversement</string>
+    <string name="download_speed">Téléchargement</string>
+    <string name="speed_limit_dialog">Régler la vitesse en Kio/s (0 - illimité)</string>
+    <string name="torrent_added_date">Ajoutée</string>
+    <string name="torrent_availability">Disponibilité</string>
+    <string name="share_stream_url">Partager l\'URL du stream…</string>
+    <string name="magnet_include_file_priorities">Inclure les priorités de fichier ?</string>
+    <string name="magnet_more_about_bep53">Plus d\'infos sur http://www.bittorrent.org/beps/bep_0053.html</string>
+    <string name="tracker_list_empty">Aucun traqueur</string>
+    <string name="edit_torrent_name">Modifier le nom du torrent</string>
+    <!-- Send text to clipboard -->
+    <string name="send_text_to_clipboard">Copier</string>
+    <string name="text_copied_to_clipboard">Copié dans le presse-papiers</string>
+    <!-- Error report -->
+    <string name="app_error_occurred">Une erreur d\'application s\'est produite. Vous pouvez la signaler aux développeurs.</string>
+    <string name="error_comment_prompt">Ajoutez des informations supplémentaires et des commentaires ici :</string>
+    <!-- Feeds -->
+    <string name="feed">RSS</string>
+    <string name="feed_channel_list_empty">Aucun canal</string>
+    <string name="select_or_add_feed_channel">Sélectionnez ou ajoutez un RSS/Canal Atom</string>
+    <string name="add_feed_channel">Ajouter un canal</string>
+    <string name="feed_name">Nom (optionnel)</string>
+    <string name="feed_filter_prompt">Saisir les mots (séparés par \"|\"), dont l\'un doit figurer dans le nom, ou saisir une expression rationnelle. Les torrents ne sont ajoutés que si ce filtre correspond au nom du torrent.</string>
+    <string name="feed_filter_prompt_one_per_line">Veuillez entrer un filtre par ligne.</string>
+    <string name="feed_auto_download">Télécharger automatiquement les torrents</string>
+    <string name="feed_use_regex">Utiliser une expression rationnelle</string>
+    <string name="backup_feed_channels">Conserver une sauvegarde</string>
+    <string name="restore_feed_channels_backup">Restaurer la sauvegarde</string>
+    <string name="feed_last_update_template">Actualisé : %1$s</string>
+    <string name="feed_last_update_never">jamais</string>
+    <string name="error_cannot_add_channel">Impossible d\'ajouter un canal</string>
+    <string name="error_cannot_edit_channel">Impossible d\'éditer le canal</string>
+    <string name="error_cannot_delete_channel">Impossible de supprimer le canal</string>
+    <string name="copy_link">Copier le lien</string>
+    <string name="delete_selected_channel">Supprimer le canal sélectionné ?</string>
+    <string name="delete_selected_channels">Supprimer les canaux sélectionnés ?</string>
+    <string name="edit_feed_channel">Modifier le canal</string>
+    <string name="link_copied_to_clipboard">Copié dans le presse-papier</string>
+    <string name="mark_as_read">Marquer comme lu</string>
+    <string name="mark_as_unread">Marquer comme non-lu</string>
+    <string name="feed_item_list_empty">Pas d\'articles</string>
+    <string name="backup_feeds_successfully">Canaux enregistrées</string>
+    <string name="restore_feeds_backup_successfully">Canaux restaurés</string>
+    <string name="error_backup_feeds">Impossible d\'enregistrer les canaux</string>
+    <string name="error_restore_feeds_backup">Échec de restauration des canaux</string>
+    <string name="feed_item_open_article_url">Ouvrir l\'article</string>
+    <string name="feeds_backup_selection_dialog_title">Sélectionner le fichier de sauvegarde</string>
+    <string name="error_import_invalid_format">Format invalide</string>
+    <string name="feed_do_not_download_immediately">Ne pas télécharger immédiatement</string>
+    <string name="feed_item_url_not_found">URL introuvable</string>
+    <!-- Create torrent dialog -->
+    <string name="create_torrent">Créer un torrent</string>
+    <string name="creating_torrent_progress">Veuillez patienter pendant que le torrent est créé…</string>
+    <string name="file_or_folder_for_seeding">Fichier ou dossier à partager</string>
+    <string name="error_please_select_file_or_folder_for_seeding_first">Veuillez d\'abord sélectionner un fichier ou un dossier pour le partage.</string>
+    <string name="tracker_urls">URL des traqueurs</string>
+    <string name="web_seed_urls">URL de partage Web</string>
+    <string name="comments">Commentaires</string>
+    <string name="tracker_urls_hint">(optionnel) Entrez un traqueur par ligne dans l\'ordre de priorité.</string>
+    <string name="web_seed_urls_hint">(Optionnel) un par ligne</string>
+    <string name="optional_hint">(Optionnel)</string>
+    <string name="piece_size">Taille de la pièce</string>
+    <string name="create_torrent_options">Options</string>
+    <string name="option_start_seeding">Commencer le partage</string>
+    <string name="option_private_torrent">Torrent privé</string>
+    <!-- piece_size_entries -->
+    <string name="piece_size_entries_0">Auto</string>
+    <string name="piece_size_entries_1">16 KiB</string>
+    <string name="piece_size_entries_2">32 KiB</string>
+    <string name="piece_size_entries_3">64 KiB</string>
+    <string name="piece_size_entries_4">128 KiB</string>
+    <string name="piece_size_entries_5">256 KiB</string>
+    <string name="piece_size_entries_6">512 KiB</string>
+    <string name="piece_size_entries_7">1 MiB</string>
+    <string name="piece_size_entries_8">2 MiB</string>
+    <string name="piece_size_entries_9">4 MiB</string>
+    <string name="piece_size_entries_10">8 MiB</string>
+    <string name="piece_size_entries_11">16 MiB</string>
+    <string name="piece_size_entries_12">32 MiB</string>
+    <string name="invalid_url">URL invalide : %1$s</string>
+    <string name="folder_is_empty">Le dossier sélectionné est vide ou tous les fichiers sont exclus par le filtre.</string>
+    <string name="error_create_torrent">Impossible de créer le torrent</string>
+    <string name="skip_files">Ignorer les fichiers</string>
+    <string name="skip_files_hint">Entrez les noms de fichiers séparés par \"|\"</string>
+    <string name="select_folder_to_save">Sélectionnez le dossier à sauvegarder</string>
+    <string name="torrent_saved_to">Torrent enregistré dans %1$s</string>
+    <string name="unable_to_open_file">Impossible d\'ouvrir le fichier sélectionné</string>
+    <string name="unable_to_create_file">Impossible de créer le fichier</string>
+    <!-- Log -->
+    <string name="journal_list_empty">Pas d\'entrées</string>
+    <string name="journal_start_recording">Lancer l\'enregistrement</string>
+    <string name="journal_stop_recording">Arrêter l\'enregistrement</string>
+    <string name="journal_started_recording">Enregistrement commencé</string>
+    <string name="journal_filter_session_log">Journal de session</string>
+    <string name="journal_filter_dht_log">Journal DHT</string>
+    <string name="journal_filter_peer_log">Journal de connexion</string>
+    <string name="journal_filter_torrent_log">Journal du torrent</string>
+    <string name="journal_save_log_failed">Échec de la sauvegarde du journal</string>
+    <string name="journal_save_log_success">Journal enregistré avec succès : %1$s</string>
+    <string name="pref_journal_save_log_to">Sauvegarder les journaux vers…</string>
+    <!-- Log settings -->
+    <string name="pref_journal_max_stored_entries">Nombre maximal d\'écritures de journal stockées</string>
+    <!-- Settings -->
+    <!-- Headers -->
+    <string name="pref_header_appearance">Apparence</string>
+    <string name="pref_header_behavior">Comportement</string>
+    <string name="pref_header_storage">Stockage</string>
+    <string name="pref_header_network">Réseau</string>
+    <string name="pref_header_scheduling">Planification</string>
+    <string name="pref_header_feed">Flux RSS</string>
+    <!-- Storage settings -->
+    <string name="pref_save_torrents_in_title">Sauvegarder les torrents vers…</string>
+    <string name="pref_move_after_download_title">Déplacer après le téléchargement</string>
+    <string name="pref_move_after_download_in_title">Déplacer vers</string>
+    <string name="pref_save_torrent_files_title">Sauvegarder les fichiers .torrent</string>
+    <string name="pref_save_torrent_files_summary">Sauvegarder les fichiers .torrent après le démarrage du téléchargement.</string>
+    <string name="pref_save_torrent_files_in_title">Sauvegarder les fichiers .torrent vers…</string>
+    <string name="pref_watch_dir_title">Dossier à surveiller</string>
+    <string name="pref_watch_dir_summary">Les fichiers .torrent présents dans ce dossier seront automatiquement ajoutés puis supprimés.</string>
+    <string name="pref_dir_to_watch_title">Dossier à regarder</string>
+    <!-- Limitations settings -->
+    <string name="pref_speed_category">Vitesse</string>
+    <string name="pref_max_download_speed_title">Vitesse de téléchargement maximale</string>
+    <string name="pref_max_upload_speed_title">Vitesse d’envoi maximale</string>
+    <string name="pref_max_connections_title">Nombre maximum de connexions</string>
+    <string name="pref_max_connections_summary">(Minimum 2 connexions)</string>
+    <string name="pref_torrent_queueing_category">Torrent en file d\'attente</string>
+    <string name="pref_max_active_uploads_title">Nombre maximale d\'upload actifs</string>
+    <string name="pref_max_active_downloads_title">Nombre maximal de téléchargements actifs</string>
+    <string name="pref_max_active_torrents_title">Nombre maximal de torrents actifs</string>
+    <string name="pref_max_connections_per_torrent_title">Nombre maximum de connexions par torrent</string>
+    <string name="pref_max_connections_per_torrent_summary">(Minimum 2 connexions)</string>
+    <string name="pref_max_uploads_per_torrent_title">Nombre maximum d\'upload par torrent</string>
+    <string name="pref_auto_manage_title">Gestion Automatique</string>
+    <string name="pref_auto_manage_summary">Le torrent peut être repris ou mis en pause automatiquement à tout moment (peut ralentir la mise en pause/reprise).</string>
+    <string name="pref_max_active_uploads_downloads_dialog_msg">-1 sans limite</string>
+    <!-- Appearance settings -->
+    <string name="pref_theme_category">Paramètres du thème</string>
+    <string name="pref_theme_title">Thème</string>
+    <!-- pref_theme_entries -->
+    <string name="pref_theme_entries_0">Clair</string>
+    <string name="pref_theme_entries_1">Sombre</string>
+    <string name="pref_theme_entries_2">Noir</string>
+    <string name="pref_notification_category">Paramètres de notification</string>
+    <string name="pref_torrent_finish_notify_title">Notification pour torrent complété</string>
+    <string name="pref_torrent_finish_notify_summary">Affiche une notification lorsqu\'un torrent est complètement téléchargé.</string>
+    <string name="pref_play_sound_notify_title">Jouer un son de notification</string>
+    <string name="pref_notify_sound_title">Son de notification</string>
+    <string name="pref_led_indicator_notify_title">Notifications par LED</string>
+    <string name="pref_led_indicator_color_notify_title">Couleur de la LED</string>
+    <string name="pref_vibration_notify_title">Vibreur</string>
+    <!-- Behavior settings -->
+    <string name="pref_autostart_title">Démarrage auto</string>
+    <string name="pref_autostart_summary">Exécuter l\'application après le démarrage de l\'appareil.</string>
+    <!-- A synonym for word "unmetered" - unlimited-->
+    <string name="pref_umnetered_connections_only_title">Connexions Internet illimitée uniquement</string>
+    <string name="pref_umnetered_connections_only_summary">Télécharger uniquement sur les connexions non-enregistrées (par exemple, Wi-Fi ou Ethernet).</string>
+    <string name="pref_enable_roaming_title">Itinérance</string>
+    <string name="pref_enable_roaming_summary">Télécharger uniquement si l\'appareil n\'est pas en itinérance.</string>
+    <string name="pref_power_management_category">Gestion de l\'alimentation</string>
+    <string name="pref_keep_alive_title">Continue de fonctionner en arrière-plan</string>
+    <string name="pref_keep_alive_summary">Laisse l\'application tourner en arrière-plan (l\'application se fermera une fois tous les téléchargements terminés.)</string>
+    <string name="pref_shutdown_downloads_complete_title">Fermer lorsque tous les téléchargements sont terminés</string>
+    <string name="pref_shutdown_downloads_complete_summary">Fermer l\'application lorsque tout est téléchargé.</string>
+    <string name="pref_cpu_do_not_sleep_title">Empêcher la mise en veille</string>
+    <string name="pref_cpu_do_not_sleep_summary">Utilisez ceci si la vitesse de téléchargement diminue lorsque l\'écran est éteint (augmente la consommation de la batterie).</string>
+    <string name="pref_download_and_upload_only_when_charging_title">Télécharger et téléverser uniquement en charge.</string>
+    <string name="pref_download_and_upload_only_when_charging_summary">Aucun fichier n\'est transféré tant que l\'appareil n\'est pas en train de charger (met tout en pause lorsqu\'il n\'est pas connecté à un chargeur).</string>
+    <string name="pref_battery_control_title">Activer le seuil de batterie</string>
+    <string name="pref_custom_battery_control_title">Pourcentage personnalisé de la batterie</string>
+    <string name="pref_custom_battery_control_value_title">Pourcentage de contrôle de la batterie</string>
+    <string name="pref_battery_control_summary">Mettre en pause tous les torrents si le niveau de batterie descend en dessous de %1$d%% (ne s\'applique pas si en charge.)</string>
+    <string name="pref_custom_battery_control_summary">Définir un pourcentage de batterie à partir duquel mettre en pause les téléchargements (ignore la valeur par défaut %1$d%%.)</string>
+    <string name="pref_custom_battery_control_dialog_summary">Voulez-vous vraiment définir un pourcentage de batterie à surveiller ? (Augmente l\'utilisation de la batterie lors des téléchargements.)</string>
+    <!-- Network settings -->
+    <string name="pref_proxy_settings_title">Paramètres de proxy</string>
+    <string name="pref_enable_dht_title">DHT</string>
+    <string name="pref_enable_dht_summary">Permettre d\'en trouver d\'autres sans tracker (Augmente l\'utilisation de la batterie.)</string>
+    <string name="pref_enable_lsd_title">LSD</string>
+    <string name="pref_enable_lsd_summary">Conçu pour prendre en charge la découverte locale, visant à minimiser le trafic.</string>
+    <string name="pref_enable_utp_title">µTP</string>
+    <string name="pref_enable_utp_summary">Destiné à atténuer la faible latence et les autres problèmes de contrôle de la saturation que l\'on trouve dans le BitTorrent classique sur TCP, tout en assurant une livraison fiable et ordonnée.</string>
+    <string name="pref_enable_upnp_title">UPnP</string>
+    <string name="pref_enable_natpmp_title">NAT-PMP</string>
+    <string name="pref_port_settings_category">Paramètres de port</string>
+    <string name="pref_use_random_port_title">Utiliser un port aléatoire</string>
+    <string name="pref_use_random_port_summarty">Définit le port de départ aléatoirement dans la plage [%1$d, %2$d] et le port final comme premier + 10.</string>
+    <string name="pref_port_range_title">Plage de port</string>
+    <string name="pref_port_range_start_title">Démarrer</string>
+    <string name="pref_port_range_end_title">Fin</string>
+    <string name="pref_encryption_category">Chiffrement</string>
+    <string name="pref_enc_mode_title">Mode</string>
+    <!-- pref_enc_mode_entries -->
+    <string name="pref_enc_mode_entries_0">Préférer le chiffrement</string>
+    <string name="pref_enc_mode_entries_1">Exiger le chiffrement</string>
+    <string name="pref_enc_mode_entries_2">Désactiver le chiffrement</string>
+    <string name="pref_enc_in_connections_title">Connexions entrantes</string>
+    <string name="pref_enc_out_connections_title">Connexions sortantes</string>
+    <string name="pref_ip_filtering_category">Filtrage d\'IP</string>
+    <string name="pref_enable_ip_filtering_title">Filtrage d\'IP</string>
+    <string name="pref_enable_ip_filtering_summary">Appliquer le filtre au démarrage peut prendre du temps selon la taille du fichier (Augmente l\'utilisation mémoire.)</string>
+    <string name="pref_ip_filtering_file_title">Fichier de filtre (.dat, .p2p)</string>
+    <string name="pref_show_nat_errors">Afficher les erreurs NAT</string>
+    <string name="pref_anonymous_mode_title">Mode anonyme</string>
+    <string name="pref_anonymous_mode_summary">Pas de chaîne user-agent pour les torrents non privés. Uniquement les traqueurs mandatés. Sockets d\'écoute fermés. Connexions entrantes via un proxy SOCKS5- ou I2P (si un proxy pair existe sur le PC proxy du tracker). NAT-PMP, UPnP, DHT et découverte locale désactivés.</string>
+    <string name="pref_seeding_outgoing_connections_title">Connexion sortante pour le partage</string>
+    <string name="pref_seeding_outgoing_connections_summary">Permettre aux torrents en partage d\'établir des connexions sortantes (Peut entraîner des coûts.)</string>
+    <!-- Proxy settings -->
+    <string name="pref_proxy_type_title">Type de proxy</string>
+    <!-- pref_proxy_type_entries -->
+    <string name="pref_proxy_type_entries_0">(Aucun)</string>
+    <string name="pref_proxy_type_entries_1">SOCKS4</string>
+    <string name="pref_proxy_type_entries_2">SOCKS5</string>
+    <string name="pref_proxy_type_entries_3">HTTP</string>
+    <string name="pref_proxy_address_title">Hôte</string>
+    <string name="pref_proxy_port_title">Port</string>
+    <string name="pref_proxy_peers_too_title">Permettre la connexion aux pairs</string>
+    <string name="pref_proxy_peers_too_summary">Les connexions aux traqueurs, à d\'autres et aux web-seeds sont protégées par un proxy. N\'affecte pas la DHT.</string>
+    <string name="pref_proxy_requires_auth_title">Requiert une authentification</string>
+    <string name="pref_proxy_requires_auth_summary">Avertissement : le mot de passe est enregistré en clair.</string>
+    <string name="pref_proxy_login_title">Nom d\'utilisateur</string>
+    <string name="pref_proxy_password_title">Mot de passe</string>
+    <!-- Schedule settings -->
+    <string name="pref_enable_scheduling_start_title">Heure de démarrage</string>
+    <string name="pref_enable_scheduling_start_summary">Démarrer l\'application à l\'heure indiquée. Les torrents fonctionneront alors selon leur état précédent le dernier arrêt.</string>
+    <string name="pref_enable_scheduling_shutdown_title">Heure d\'arrêt planifiée</string>
+    <string name="pref_enable_scheduling_shutdown_summary">Arrêter l\'application à l\'heure spécifiée</string>
+    <string name="pref_scheduling_run_only_once_title">Exécuter une seule fois</string>
+    <string name="pref_scheduling_switch_wifi_title">Allumer/éteindre le Wi-Fi</string>
+    <string name="pref_scheduling_switch_wifi_summary">Allumer ou éteindre le Wi-Fi selon une heure d\'allumage et d\'arrêt planifié.</string>
+    <!-- Feed settings -->
+    <string name="pref_feed_auto_refresh_title">Actualisation automatique des canaux</string>
+    <string name="pref_feed_auto_refresh_summary">Actualiser périodiquement les canaux en arrière-plan.</string>
+    <string name="pref_feed_refresh_interval_title">Intervalle d\'actualisation</string>
+    <!-- pref_feed_refresh_intervals_entries -->
+    <string name="pref_feed_refresh_intervals_entries_0">15 minutes</string>
+    <string name="pref_feed_refresh_intervals_entries_1">30 minutes</string>
+    <string name="pref_feed_refresh_intervals_entries_2">1 heure</string>
+    <string name="pref_feed_refresh_intervals_entries_3">2 heures</string>
+    <string name="pref_feed_refresh_intervals_entries_4">6 heures</string>
+    <string name="pref_feed_refresh_intervals_entries_5">12 heures</string>
+    <string name="pref_feed_refresh_intervals_entries_6">1 jour</string>
+    <!-- A synonym for word "unmetered" - unlimited-->
+    <string name="pref_feed_auto_refresh_unmetered_connections_only_title">Connexions Internet illimité uniquement</string>
+    <string name="pref_feed_auto_refresh_unmetered_connections_only_summary">Actualiser uniquement via des connexions illimitées (par exemple, Wi-Fi ou Ethernet).</string>
+    <string name="pref_feed_auto_refresh_enable_roaming_title">Activer l\'itinérance</string>
+    <string name="pref_feed_keep_items_time_title">Gardez les articles</string>
+    <!-- pref_feed_keep_items_time_entries -->
+    <string name="pref_feed_keep_items_time_entries_0">1 jour</string>
+    <string name="pref_feed_keep_items_time_entries_1">2 jours</string>
+    <string name="pref_feed_keep_items_time_entries_2">4 jours</string>
+    <string name="pref_feed_keep_items_time_entries_3">1 semaine</string>
+    <string name="pref_feed_keep_items_time_entries_4">2 semaines</string>
+    <string name="pref_feed_keep_items_time_entries_5">1 mois</string>
+    <string name="pref_feed_keep_items_time_entries_6">2 mois</string>
+    <string name="pref_feed_keep_items_time_entries_7">3 mois</string>
+    <string name="pref_feed_keep_items_time_entries_8">Toujours</string>
+    <string name="pref_feed_start_torrents_title">Démarrer automatiquement les torrents</string>
+    <string name="pref_feed_start_torrents_summary">Lancer le téléchargement dès l\'ajout des torrents.</string>
+    <string name="pref_feed_remove_duplicates_title">Supprimer les doublons</string>
+    <string name="pref_feed_remove_duplicates_summary">Ignore le téléchargement des fichiers déjà présents.</string>
+    <!-- Streaming settings -->
+    <string name="pref_streaming_enable_title">Streaming</string>
+    <string name="pref_streaming_enable_summary">Permet de télécharger des fichiers unitaires depuis un torrent en utilisant un navigateur web ou un lecteur multimédia en utilisant des URL HTTP/S.</string>
+    <string name="pref_streaming_hostname">Nom d\'hôte</string>
+    <string name="pref_streaming_port">Port</string>
+    <string name="pref_streaming_error">Choisissez un port ou un nom d\'hôte pour le streaming qui n\'est pas occupé ou incorrect.</string>
+    <string name="pref_remote_category">Commande à distance</string>
+    <string name="pref_remote_enable_title">Commande à distance depuis un téléphone</string>
+    <string name="pref_remote_enable_summary">Gérez les téléchargements depuis le navigateur d\'un autre appareil connecté au même réseau. Les torrents continuent en arrière-plan tant que c\'est activé.</string>
+    <string name="pref_remote_port">Port</string>
+    <string name="pref_remote_password">Mot de passe</string>
+    <string name="pref_remote_address">Adresse à ouvrir sur le téléphone</string>
+    <string name="pref_remote_address_none">Pas de connexion réseau</string>
+    <string name="pref_remote_address_summary">%1$s\nIdentifiant : n\'importe lequel, avec le mot de passe ci-dessus.</string>
+    <string name="pref_remote_error">Impossible de démarrer la commande à distance. Choisissez un autre port.</string>
+    <!-- About dialog -->
+    <string name="about_title">À propos</string>
+    <string name="about_description">Plus d\'information et comment aider le projet : &lt;a href=https://gitlab.com/proninyaroslav/libretorrent&gt;https://gitlab.com/proninyaroslav/libretorrent&lt;/a&gt;&lt;br&gt;&lt;br&gt; LibreTorrent est un client torrent Free as in Freedom pour Android 4+, basé sur libtorrent (Java wrapper &lt;a href=https://github.com/aldenml/libtorrent4j&gt;libtorrent4j&lt;/a&gt;) lib.&lt;br&gt;&lt;br&gt; LibreTorrent est un logiciel libre, publié sous les termes de la &lt;a href=http://www.gnu.org/copyleft/gpl.html&gt;Licence GNU General Public v3 (GPLv3)&lt;/a&gt;</string>
+    <string name="about_changelog">Journal des modifications</string>
+    <string name="pref_header_streaming">Streaming</string>
+    <string name="pref_header_limitations">Limites</string>
+    <string name="journal_filter_portmap_log">Journal UPnP/NAT-PMP</string>
+    <string name="log_journal">Journal</string>
+    <string name="switch_off">Désactivé</string>
+    <string name="torrent_seeds">Sources</string>
+    <string name="pref_default_trackers_list_summary">Liste des traqueurs qui sont utilisés dans les cas suivants :
+\n1. Lors de l\'ajout d\'un torrent, la liste par défaut est automatiquement ajoutée à la liste de torrents.
+\n2. Utilisés pour récupérer les liens magnétiques.</string>
+    <string name="pref_default_trackers_list_title">Traqueurs par défaut</string>
+    <string name="pref_watch_dir_delete_file_title">Supprimer le fichier .torrent après l\'avoir ajouté</string>
+    <string name="pref_foreground_notify_status_filter_entries_3">Téléchargement des métadonnées…</string>
+    <string name="error_open_torrent">Impossible d\'ouvrir le torrent</string>
+    <string name="pref_foreground_notify_status_filter_entries_0">Tous</string>
+    <string name="pref_foreground_notify_status_filter_entries_2">Téléchargé</string>
+    <string name="manage_all_files_warning_dialog_description">N\'utilisez pas la version Google Play de LibreTorrent si vous souhaitez enregistrer des torrents dans des dossiers autres que \" Téléchargements \" et similaires.
+\nIl existe d\'autres sources sur la page du projet.</string>
+    <string name="perm_denied_warning_android_r">L\'autorisation d\'accès à tous les fichiers est nécessaire pour télécharger des torrents et accéder aux fichiers .torrent dans des dossiers arbitraires. Sans cette autorisation, LibreTorrent n\'aura accès qu\'à un nombre limité de dossiers. Êtes-vous sûr de vouloir refuser cette autorisation ?</string>
+    <string name="pref_foreground_notify_status_filter_entries_1">En cours de téléchargement…</string>
+    <string name="pref_foreground_notify_status_filter_entries_4">Erreur</string>
+    <string name="manage_all_files_warning_dialog_title">Attention</string>
+    <string name="pref_foreground_notify_sorting_entries_0">Nom (A - Z)</string>
+    <string name="pref_foreground_notify_sorting_entries_1">Nom (Z - A)</string>
+    <string name="pref_foreground_notify_sorting_entries_2">Date d\'ajout (plus récent en premier)</string>
+    <string name="pref_foreground_notify_sorting_entries_3">Date d\'ajout (plus vieux en premier)</string>
+    <string name="pref_foreground_notify_sorting_entries_7">Progression (ordre décroissant)</string>
+    <string name="pref_foreground_notify_sorting_entries_8">Heure de fin prévue (ordre croisant)</string>
+    <string name="pref_foreground_notify_combined_pause_button_title">Bouton pause combiné</string>
+    <string name="pref_foreground_notify_sorting_entries_10">Popularité (ordre croissant)</string>
+    <string name="pref_foreground_notification_category">Paramètres des notifications de premier-plan</string>
+    <string name="pref_foreground_notify_status_filter">Filtre d\'état</string>
+    <string name="pref_foreground_notify_sorting">Trier par</string>
+    <string name="pref_foreground_notify_sorting_entries_4">Taille (ordre croisant)</string>
+    <string name="pref_foreground_notify_sorting_entries_5">Taille (ordre décroissant)</string>
+    <string name="pref_foreground_notify_sorting_entries_6">Progression (ordre croissant)</string>
+    <string name="pref_foreground_notify_sorting_entries_9">Heure de fin prévue (ordre décroissant)</string>
+    <string name="pref_foreground_notify_sorting_entries_11">Popularité (ordre décroissant)</string>
+    <string name="pref_foreground_notify_sorting_entries_12">Aucun tri</string>
+    <string name="pref_foreground_notify_combined_pause_button_summary">Combine deux boutons : pauser tout et reprendre tout. Le bouton fonctionnera comme un commutateur. Attention : l\'état du bouton n\'est pas affecté par la pause/reprise manuelle du torrent.</string>
+    <string name="exact_alarm_permission_warning">Pour que le planificateur fonctionne, vous devez obtenir une autorisation dans une boîte de dialogue spéciale du système. Voulez-vous poursuivre ?</string>
+    <string name="pref_validate_https_trackers_title">Valider le certificat des trackers HTTPS</string>
+    <string name="pref_validate_https_trackers_summary">Le certificat des trackers HTTPS et des serveurs web HTTPS sera validé dans le magasin de certificats du système.</string>
+    <string name="download_first_last_pieces">Télécharger d\'abord les premières et dernières pièces</string>
+    <string name="torrent_speed_limit_dialog">Définissez la vitesse en KiB/s. Notez que la définition d\'une limite plus élevée sur un torrent que la limite globale ne remplacera pas la limite globale.</string>
+    <string name="pref_posix_disk_io_title">E/S Disque POSIX</string>
+    <string name="apply_settings_after_reboot">Les changements seront appliqués après le redémarrage de l\'application.</string>
+    <string name="pref_posix_disk_io_summary">Note : option à utiliser que dans des situations particulières, comme la prise en charge de certains systèmes de fichier de carte SD. Active une simple E/S de disque POSIX, utilisée par les systèmes ne possédant pas d\'espace d\'adressage virtuel 64-bits ou ne supportant pas les fichiers mappés en mémoire.</string>
+    <string name="torrent_version_entries_v1_only">V1 seulement</string>
+    <string name="torrent_version_entries_v2_only">V2 seulement</string>
+    <string name="go_to_folder">Aller au dossier</string>
+    <string name="torrent_version">Version torrent</string>
+    <string name="torrent_version_entries_hybrid">Hybride</string>
+    <string name="pref_locale_title">Langue</string>
+    <string name="error_open_ip_filter_file">Impossible d\'ouvrir le fichier du filtre IP</string>
+    <string name="error_select_folder">Impossible d\'ouvrir le dossier sélectionné</string>
+    <string name="feed_download_immediately">Télécharger immédiatement</string>
+    <string name="error_fetch_torrent_metadata">Impossible de récupérer les métadonnées</string>
+    <plurals name="torrent_info_size_template_plural">
+        <item quantity="one">%1$s • %2$d fichier</item>
+        <item quantity="many">%1$s • %2$d fichiers</item>
+        <item quantity="other">%1$s • %2$d fichiers</item>
+    </plurals>
+    <string name="single_downloading_torrent_notify_template">%1$d%% • %2$s • ↓ %3$s/s</string>
+    <string name="foreground_notify_template">↓ %1$s/s | ↑ %2$s/s • %3$s</string>
+    <string name="pref_enable_auto_manage_title">Activer la gestion automatique</string>
+    <string name="pref_theme_dynamic_colors_title">Couleurs dynamiques</string>
+    <string name="pref_theme_dynamic_colors_summary">Les couleurs du thème sont ajustées en fonction de vos paramètres système, fond d\'écran ou couleur sélectionnée</string>
+    <string name="pref_theme_black_backgrounds_summary">Utiliser un arrière plan noir avec le thème sombre</string>
+    <string name="pref_black_backgrounds">Arrière plan noir</string>
+    <string name="pref_theme_entries_3">Système</string>
+    <string name="pref_use_anonymous_mode">Utiliser le mode anonyme</string>
+    <string name="pref_enable_feed_auto_refresh">Activer le rafraîchissement automatique</string>
+    <string name="pref_enable_streaming">Activer le streaming</string>
+    <string name="torrents">Torrents</string>
+    <string name="ascending_sort">Tri ascendant</string>
+    <string name="descending_sort">Tri descendant</string>
+    <string name="load_message">Chargement, veuillez patienter…</string>
+    <string name="reset_filter">Réinitialiser le filtre</string>
+    <string name="enable_journal">Activer la journalisation</string>
+    <string name="scroll_up">Défiler en haut</string>
+    <string name="scroll_down">Défiler en bas</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:key="@string/pref_key_feed_auto_refresh"
+        android:persistent="false"
+        android:title="@string/pref_feed_auto_refresh_title"
+        app:singleLineTitle="false" />
+
+    <ListPreference
+        android:entries="@array/pref_feed_keep_items_time_entries"
+        android:entryValues="@array/pref_feed_keep_items_time_entry_values"
+        android:key="@string/pref_key_feed_keep_items_time"
+        android:persistent="false"
+        android:title="@string/pref_feed_keep_items_time_title"
+        app:singleLineTitle="false"
+        app:useSimpleSummaryProvider="true" />
+
+    <SwitchPreferenceCompat
+        android:key="@string/pref_key_feed_start_torrents"
+        android:persistent="false"
+        android:summary="@string/pref_feed_start_torrents_summary"
+        android:title="@string/pref_feed_start_torrents_title"
+        app:singleLineTitle="false" />
+
+    <SwitchPreferenceCompat
+        android:key="@string/pref_key_feed_remove_duplicates"
+        android:persistent="false"
+        android:summary="@string/pref_feed_remove_duplicates_summary"
+        android:title="@string/pref_feed_remove_duplicates_title"
+        app:singleLineTitle="false" />
+</PreferenceScreen>

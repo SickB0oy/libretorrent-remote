@@ -1,0 +1,19 @@
+* Licențiat GPLv3+. Utilizați, vedeți, schimbați și distribuiți; Cu toti.
+* Suport pentru BitTorrent 2.0 și WebTorrent
+* Selectați ce fișiere să descărcați.
+* Mutați fișierele în timp ce descarcati.
+* Mută automat fișierele descărcate într-un alt folder sau unitate externă.
+* Transmite fișiere, cu descărcări secvențiale.
+* Android TV.
+* Design material, temă întunecată și neagră și interfață de utilizare pentru tabletă.
+* Setări personalizabile pentru rețea, baterie și interfață de utilizare etc.
+* 35+ traduceri.
+* Programare.
+* Descărcare automată, cu manager Atom/RSS.
+* Creați torrente, cu fișiere multe și mari.
+* HTTP\S și link-uri magnet.
+* DHT, PeX, criptare, LSD, UPnP, NAT*PMP, µTP.
+* Filtrare IP (eMule dat și PeerGuardian).
+* Acceptă proxy pentru urmăritori și colegi.
+* Bazat pe libtorrent4j.
+* Și altele.

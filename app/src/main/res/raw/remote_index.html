@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f6feb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>LibreTorrent Remote</title>
+<style>
+  :root {
+    --bg: #f4f5f7; --card: #ffffff; --text: #1b1d21; --muted: #667085;
+    --line: #e3e6ea; --accent: #1f6feb; --accent-text: #ffffff;
+    --ok: #1a7f37; --warn: #b26b00; --err: #c62828; --bar: #e8ebef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #181b21; --text: #e8eaed; --muted: #9aa3ae;
+      --line: #2a2f37; --accent: #4c8dff; --accent-text: #0b0d10;
+      --ok: #3fb950; --warn: #e3a12f; --err: #ff6b6b; --bar: #262b33;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  header {
+    position: sticky; top: 0; z-index: 2; background: var(--bg);
+    padding: 14px 16px 10px; border-bottom: 1px solid var(--line);
+  }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  h1 { font-size: 18px; margin: 0; letter-spacing: -0.01em; }
+  .stats { color: var(--muted); font-size: 13px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  main { padding: 12px 16px 96px; max-width: 720px; margin: 0 auto; }
+  button {
+    font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--text);
+    border-radius: 10px; padding: 8px 12px; cursor: pointer; min-height: 40px;
+  }
+  button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+  button.danger { color: var(--err); }
+  button:disabled { opacity: .5; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px; margin-bottom: 10px;
+  }
+  .name { font-weight: 600; word-break: break-word; }
+  .meta { color: var(--muted); font-size: 13px; margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 12px; font-variant-numeric: tabular-nums; }
+  .bar { height: 6px; border-radius: 3px; background: var(--bar); overflow: hidden; margin-top: 10px; }
+  .bar > div { height: 100%; background: var(--accent); width: 0; transition: width .4s; }
+  .bar.done > div { background: var(--ok); }
+  .bar.paused > div { background: var(--muted); }
+  .state { font-weight: 600; }
+  .state.SEEDING, .state.FINISHED { color: var(--ok); }
+  .state.PAUSED, .state.STOPPED { color: var(--muted); }
+  .state.ERROR { color: var(--err); }
+  .state.CHECKING, .state.DOWNLOADING_METADATA { color: var(--warn); }
+  .actions { margin-top: 12px; }
+  .err { color: var(--err); font-size: 13px; margin-top: 6px; }
+  .empty { text-align: center; color: var(--muted); padding: 48px 16px; }
+  .fab {
+    position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+    border-radius: 999px; padding: 14px 20px; box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  }
+  dialog {
+    border: none; border-radius: 16px; padding: 0; width: min(560px, calc(100% - 24px));
+    background: var(--card); color: var(--text);
+  }
+  dialog::backdrop { background: rgba(0,0,0,.45); }
+  .dlg { padding: 18px; }
+  .dlg h2 { margin: 0 0 12px; font-size: 17px; }
+  textarea {
+    width: 100%; min-height: 110px; resize: vertical; font: 13px/1.4 ui-monospace, monospace;
+    border: 1px solid var(--line); border-radius: 10px; padding: 10px; background: var(--bg); color: var(--text);
+  }
+  label.file { display: block; margin: 12px 0; color: var(--muted); font-size: 14px; }
+  input[type=file] { display: block; margin-top: 6px; max-width: 100%; color: var(--text); }
+  .dlg .row { justify-content: flex-end; margin-top: 14px; }
+  #toast {
+    position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%);
+    background: var(--text); color: var(--bg); padding: 10px 14px; border-radius: 10px;
+    font-size: 14px; max-width: calc(100% - 32px); display: none; z-index: 5;
+  }
+  .offline { background: var(--err); color: #fff; text-align: center; padding: 6px; font-size: 13px; display: none; }
+</style>
+</head>
+<body>
+<div class="offline" id="offline">Connexion perdue avec la TV…</div>
+<header>
+  <div class="top">
+    <h1>LibreTorrent</h1>
+    <div class="row">
+      <button id="pauseAll" title="Tout mettre en pause">⏸ Tout</button>
+      <button id="resumeAll" title="Tout reprendre">▶ Tout</button>
+    </div>
+  </div>
+  <div class="stats" id="stats">Chargement…</div>
+</header>
+
+<main id="list"></main>
+
+<button class="primary fab" id="openAdd">+ Ajouter</button>
+
+<dialog id="addDlg">
+  <form class="dlg" id="addForm" method="dialog">
+    <h2>Ajouter un torrent</h2>
+    <textarea name="magnet" id="magnet" placeholder="Colle un ou plusieurs liens magnet (un par ligne)"></textarea>
+    <label class="file">ou choisis des fichiers .torrent
+      <input type="file" id="files" accept=".torrent,application/x-bittorrent" multiple>
+    </label>
+    <div class="row">
+      <button type="button" id="cancelAdd">Annuler</button>
+      <button type="submit" class="primary" id="submitAdd">Ajouter</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+  var HDR = { "X-Requested-With": "LibreTorrentRemote" };
+  var STATE_LABEL = {
+    DOWNLOADING: "Téléchargement", SEEDING: "Partage", FINISHED: "Terminé",
+    PAUSED: "En pause", STOPPED: "Arrêté", CHECKING: "Vérification",
+    DOWNLOADING_METADATA: "Récupération des infos", ERROR: "Erreur", UNKNOWN: "—"
+  };
+  var listEl = document.getElementById("list");
+  var statsEl = document.getElementById("stats");
+  var toastEl = document.getElementById("toast");
+  var offlineEl = document.getElementById("offline");
+  var toastTimer = null;
+
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.style.display = "block";
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.style.display = "none"; }, 3500);
+  }
+
+  function size(b) {
+    if (b == null || b < 0) return "—";
+    var u = ["o", "Ko", "Mo", "Go", "To"], i = 0;
+    while (b >= 1024 && i < u.length - 1) { b /= 1024; i++; }
+    return (i === 0 ? b : b.toFixed(b < 10 ? 2 : 1)) + " " + u[i];
+  }
+  function speed(b) { return size(b) + "/s"; }
+  function eta(s) {
+    if (s == null || s < 0) return "∞";
+    if (s < 60) return s + " s";
+    var m = Math.floor(s / 60), h = Math.floor(m / 60), d = Math.floor(h / 24);
+    if (d > 0) return d + " j " + (h % 24) + " h";
+    if (h > 0) return h + " h " + (m % 60) + " min";
+    return m + " min";
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function post(url, body) {
+    return fetch(url, { method: "POST", headers: HDR, body: body, credentials: "same-origin" })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok && !(j.added && j.added.length)) throw new Error(j.error || (j.errors && j.errors.join(", ")) || ("Erreur " + r.status));
+          return j;
+        });
+      });
+  }
+  function form(obj) {
+    var p = new URLSearchParams();
+    Object.keys(obj).forEach(function (k) { p.append(k, obj[k]); });
+    return p;
+  }
+
+  function render(data) {
+    var t = data.torrents || [];
+    t.sort(function (a, b) { return b.added - a.added; });
+    var down = 0, up = 0, active = 0;
+    t.forEach(function (x) { down += x.down; up += x.up; if (x.state === "DOWNLOADING") active++; });
+    statsEl.textContent = "↓ " + speed(down) + "   ↑ " + speed(up) + "   ·   " +
+      t.length + " torrent" + (t.length > 1 ? "s" : "") +
+      (active ? " (" + active + " en cours)" : "") +
+      (data.freeSpace != null ? "   ·   Libre : " + size(data.freeSpace) : "");
+
+    if (!data.running) {
+      listEl.innerHTML = '<div class="empty">Le moteur torrent de la TV est arrêté.<br>Ouvre LibreTorrent sur la TV.</div>';
+      return;
+    }
+    if (!t.length) {
+      listEl.innerHTML = '<div class="empty">Aucun torrent pour l’instant.<br>Appuie sur « + Ajouter ».</div>';
+      return;
+    }
+
+    listEl.innerHTML = t.map(function (x) {
+      var paused = x.state === "PAUSED" || x.state === "STOPPED";
+      var done = x.progress >= 100;
+      var cls = done ? "done" : (paused ? "paused" : "");
+      var meta = [];
+      meta.push('<span class="state ' + esc(x.state) + '">' + esc(STATE_LABEL[x.state] || x.state) + '</span>');
+      meta.push(x.progress + " %");
+      meta.push(size(x.received) + " / " + size(x.size));
+      if (x.state === "DOWNLOADING") {
+        meta.push("↓ " + speed(x.down));
+        meta.push("reste " + eta(x.eta));
+      }
+      if (x.up > 0) meta.push("↑ " + speed(x.up));
+      if (!paused) meta.push(x.peers + "/" + x.totalPeers + " pairs");
+      return '<div class="card" data-id="' + esc(x.id) + '">' +
+        '<div class="name">' + esc(x.name) + '</div>' +
+        '<div class="meta">' + meta.join("<span>·</span>") + '</div>' +
+        '<div class="bar ' + cls + '"><div style="width:' + Math.max(0, Math.min(100, x.progress)) + '%"></div></div>' +
+        (x.error ? '<div class="err">' + esc(x.error) + '</div>' : '') +
+        '<div class="row actions">' +
+          '<button data-act="toggle">' + (paused ? "▶ Reprendre" : "⏸ Pause") + '</button>' +
+          '<button data-act="recheck">Vérifier</button>' +
+          '<button class="danger" data-act="delete">Supprimer</button>' +
+        '</div></div>';
+    }).join("");
+  }
+
+  var busy = false;
+  function refresh() {
+    if (busy) return;
+    busy = true;
+    fetch("/api/torrents", { credentials: "same-origin", cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { offlineEl.style.display = "none"; render(d); })
+      .catch(function () { offlineEl.style.display = "block"; })
+      .then(function () { busy = false; });
+  }
+
+  listEl.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-act]");
+    if (!btn) return;
+    var card = btn.closest(".card");
+    var id = card.getAttribute("data-id");
+    var name = card.querySelector(".name").textContent;
+    var act = btn.getAttribute("data-act");
+    if (act === "delete") {
+      if (!confirm("Supprimer « " + name + " » de la liste ?")) return;
+      var withFiles = confirm("Supprimer aussi les fichiers téléchargés ?\n\nOK = supprimer les fichiers\nAnnuler = les garder");
+      act = withFiles ? "deleteFiles" : "delete";
+    }
+    btn.disabled = true;
+    post("/api/action", form({ id: id, action: act }))
+      .then(function () { setTimeout(refresh, 400); })
+      .catch(function (err) { toast(err.message); })
+      .then(function () { btn.disabled = false; });
+  });
+
+  document.getElementById("pauseAll").onclick = function () {
+    post("/api/all", form({ action: "pause" })).then(function () { toast("Tout est en pause"); setTimeout(refresh, 400); })
+      .catch(function (err) { toast(err.message); });
+  };
+  document.getElementById("resumeAll").onclick = function () {
+    post("/api/all", form({ action: "resume" })).then(function () { toast("Tout reprend"); setTimeout(refresh, 400); })
+      .catch(function (err) { toast(err.message); });
+  };
+
+  var dlg = document.getElementById("addDlg");
+  var magnetEl = document.getElementById("magnet");
+  var filesEl = document.getElementById("files");
+  document.getElementById("openAdd").onclick = function () {
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    setTimeout(function () { magnetEl.focus(); }, 50);
+  };
+  function closeDlg() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  document.getElementById("cancelAdd").onclick = closeDlg;
+
+  document.getElementById("addForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var magnets = magnetEl.value.trim();
+    var files = filesEl.files;
+    if (!magnets && !files.length) { toast("Colle un lien magnet ou choisis un fichier"); return; }
+    var fd = new FormData();
+    fd.append("magnet", magnets);
+    for (var i = 0; i < files.length; i++) fd.append(i === 0 ? "torrent" : "torrent" + (i + 1), files[i], files[i].name);
+    var submit = document.getElementById("submitAdd");
+    submit.disabled = true;
+    post("/api/add", fd)
+      .then(function (j) {
+        var msg = (j.added && j.added.length ? "Ajouté : " + j.added.join(", ") : "");
+        if (j.errors && j.errors.length) msg += (msg ? " — " : "") + "Erreurs : " + j.errors.join(", ");
+        toast(msg || "Ajouté");
+        magnetEl.value = ""; filesEl.value = "";
+        closeDlg();
+        setTimeout(refresh, 500);
+      })
+      .catch(function (err) { toast(err.message); })
+      .then(function () { submit.disabled = false; });
+  });
+
+  refresh();
+  setInterval(function () { if (!document.hidden) refresh(); }, 2000);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) refresh(); });
+})();
+</script>
+</body>
+</html>
