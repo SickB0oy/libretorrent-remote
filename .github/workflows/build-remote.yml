@@ -27,14 +27,17 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
 
       - name: Set up signing key
+        id: sign
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
           if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ]; then
-            echo "::error::Les secrets KEYSTORE_BASE64 et KEYSTORE_PASSWORD sont manquants (Settings > Secrets and variables > Actions). Sans eux, l'APK ne serait pas signé et ne pourrait pas être installé."
-            exit 1
+            echo "::warning::Secrets KEYSTORE_BASE64 / KEYSTORE_PASSWORD manquants : compilation de test uniquement, APK non signé et non publié."
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          echo "signed=true" >> "$GITHUB_OUTPUT"
           mkdir -p signing
           echo "$KEYSTORE_BASE64" | base64 -d > signing/remote.jks
           {
@@ -54,6 +57,7 @@ jobs:
           find app/build/outputs/apk/base/release -name '*.apk' -exec cp {} out/ \;
           ls -la out
           universal=$(ls out/*universal*.apk | head -n1)
+          [ -n "$universal" ] || { echo "::error::APK universel introuvable"; exit 1; }
           cp "$universal" out/LibreTorrent-Remote.apk
           echo "version=$(grep -oP "versionName '\K[^']+" app/build.gradle)" >> "$GITHUB_OUTPUT"
 
@@ -63,6 +67,7 @@ jobs:
           path: out/*.apk
 
       - name: Publish release
+        if: steps.sign.outputs.signed == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
